@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://firestudio.cn/about/index.html</loc>
+    
+    <lastmod>2019-03-27T17:26:13.814Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://firestudio.cn/categories/index.html</loc>
     
     <lastmod>2019-03-27T16:46:32.605Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://firestudio.cn/2016/02/26/migrate-from-octopress-to-hexo/</loc>
     
     <lastmod>2019-03-27T16:44:29.156Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://firestudio.cn/about/index.html</loc>
-    
-    <lastmod>2019-03-27T15:54:54.517Z</lastmod>
     
   </url>
   
