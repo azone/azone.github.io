@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="b7JVQn8OvgfruYi3AhjeMcpf5MqsPknjvF4qzhP5Q6A">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="现在通过GitHub+Octopress来搭建个人博客的越来越多了。这几天我也试着通过这个试着搭建一下，开始觉得很折腾，后来折腾出来之后发现还是买简单的。 通过GitHub+Octopress搭建的博客有几个很显而易见的有点：">
+<meta name="keywords" content="Octopress,GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何通过GitHub与Octopresss来搭建自己的博客">
+<meta property="og:url" content="http://firestudio.cn/2013/01/05/ru-he-tong-guo-github-yu-octopress-lai-da-jian-zi-ji-de-bo-ke/index.html">
+<meta property="og:site_name" content="Fire Studio">
+<meta property="og:description" content="现在通过GitHub+Octopress来搭建个人博客的越来越多了。这几天我也试着通过这个试着搭建一下，开始觉得很折腾，后来折腾出来之后发现还是买简单的。 通过GitHub+Octopress搭建的博客有几个很显而易见的有点：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-27T14:23:09.913Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何通过GitHub与Octopresss来搭建自己的博客">
+<meta name="twitter:description" content="现在通过GitHub+Octopress来搭建个人博客的越来越多了。这几天我也试着通过这个试着搭建一下，开始觉得很折腾，后来折腾出来之后发现还是买简单的。 通过GitHub+Octopress搭建的博客有几个很显而易见的有点：">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Fire Studio" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://firestudio.cn/2013/01/05/ru-he-tong-guo-github-yu-octopress-lai-da-jian-zi-ji-de-bo-ke/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>如何通过GitHub与Octopresss来搭建自己的博客 | Fire Studio</title>
+  
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-1990573-3"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1990573-3');
+    }
+  </script>
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ebf7a216144a17f1a6367e562014adf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fire Studio</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">记录，学习，成长</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2013/01/05/ru-he-tong-guo-github-yu-octopress-lai-da-jian-zi-ji-de-bo-ke/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yozone W.">
+      <meta itemprop="description" content="iOS Developer">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fire Studio">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何通过GitHub与Octopresss来搭建自己的博客
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2013-01-05 21:05:00" itemprop="dateCreated datePublished" datetime="2013-01-05T21:05:00+08:00">2013-01-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-27 22:23:09" itemprop="dateModified" datetime="2019-03-27T22:23:09+08:00">2019-03-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">Other</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+              
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2013/01/05/ru-he-tong-guo-github-yu-octopress-lai-da-jian-zi-ji-de-bo-ke/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2013/01/05/ru-he-tong-guo-github-yu-octopress-lai-da-jian-zi-ji-de-bo-ke/" itemprop="commentCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+            <span id="/2013/01/05/ru-he-tong-guo-github-yu-octopress-lai-da-jian-zi-ji-de-bo-ke/" class="leancloud_visitors" data-flag-title="如何通过GitHub与Octopresss来搭建自己的博客">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>现在通过<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>+<a href="http://octopress.org/" target="_blank" rel="noopener">Octopress</a>来搭建个人博客的越来越多了。这几天我也试着通过这个试着搭建一下，开始觉得很折腾，后来折腾出来之后发现还是买简单的。</p>
+<p>通过<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>+<a href="http://octopress.org/" target="_blank" rel="noopener">Octopress</a>搭建的博客有几个很显而易见的有点：<br><a id="more"></a></p>
+<ol>
+<li>简单，虽然一开始觉得还是很复杂的，但是等搭建好一次之后发现还是很简单的；</li>
+<li>完全免费，不需要考虑空间费用问题，甚至域名的费用也不用考虑；</li>
+<li>空间够大，如果只写文字类的博客来说<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>提供1GB的空间，已经足够用了</li>
+<li>插件多，<a href="http://octopress.org/" target="_blank" rel="noopener">Octopress</a>也有很多插件（包括<a href="http://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>的插件），虽然不能和Wordpress比，但是也够用了~。如果自己有能力的话也可以自己写一些</li>
+<li>有版本控制，随时恢复到以前任何一个版本</li>
+<li>……</li>
+</ol>
+<p>废话不多说了，下面就介绍来一下博客的搭建过程。</p>
+<h2 id="一些必要元素"><a href="#一些必要元素" class="headerlink" title="一些必要元素"></a>一些必要元素</h2><ul>
+<li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>账号</li>
+<li>Git环境</li>
+<li>Ruby环境（1.9.3）</li>
+<li>Markdown编辑器（用于写日志用）</li>
+</ul>
+<h3 id="注册GitHub账号"><a href="#注册GitHub账号" class="headerlink" title="注册GitHub账号"></a>注册GitHub账号</h3><p>这个很简单，只需要到<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>按照上面的提示注册就可以了</p>
+<h3 id="搭建Git环境"><a href="#搭建Git环境" class="headerlink" title="搭建Git环境"></a>搭建Git环境</h3><ul>
+<li>如果是Mac的话建议用<a href="http://code.google.com/p/git-osx-installer/downloads/list" target="_blank" rel="noopener">Git OS X Installer</a></li>
+<li>如果是Windows的话请下载<a href="http://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git" target="_blank" rel="noopener">msysgit</a>并安装</li>
+<li>如果是Linux<ul>
+<li>Debian/Ubuntu：<code>sudo apt-get install git-core</code></li>
+<li>CentOS/Redhat/Fedora： <code>sudo yum install git-core</code></li>
+<li>其他Linux系统可以到<a href="http://git-scm.com" target="_blank" rel="noopener">Git官网</a>(需要翻墙)或者<a href="https://github.com/git/git" target="_blank" rel="noopener">GitHub</a>下载源代码进行编译安装</li>
+</ul>
+</li>
+</ul>
+<p>装好之后需要对git进行简单的配置（如果是Windows需要打开Git Shell）<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"your-email@example.com"</span></span><br><span class="line">git config --global user.name <span class="string">"Your Name Here"</span></span><br></pre></td></tr></table></figure></p>
+<p>然后生成证书（如果是Windows需要打开Git Shell）<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your-email@example.com or other message"</span></span><br></pre></td></tr></table></figure></p>
+<p>然后拷贝~/.ssh/id_rsa.pub（Windows一般在C:\Users\<username>.ssh\id_rsa.pub）的内容，登陆<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>，进入”Account Settings”，点击”SSH Keys”，再点”Add SSH Keys”，将id_rsa.pub的内容粘贴到”Key”中，并输入”Title”</username></p>
+<h3 id="安装Ruby"><a href="#安装Ruby" class="headerlink" title="安装Ruby"></a>安装Ruby</h3><p>使用<a href="http://octopress.org/" target="_blank" rel="noopener">Octopress</a>需要Ruby版本为1.9.3，如果小于这个版本则无法使用。下面介绍一下如何安装Ruby~</p>
+<p>如果你用的操作系统是非Windows则比较简单，强烈建议安装<a href="https://github.com/sstephenson/rbenv" target="_blank" rel="noopener">rbenv</a>或者<a href="https://rvm.io/" target="_blank" rel="noopener">RVM</a>，通过它们来安装ruby1.9.3，这样不会对你系统本身造成任何影响。以个人经验在Mac下安装Ruby比较麻烦一些。如果你之前安装过XCode4.1（必须装了Command Line Tools）或者之前的版本是比较简单的，否则需要先安装<code>apple-gcc42</code>，<code>apple-gcc42</code>你可以通过<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>（<a href="https://github.com/mxcl/homebrew" target="_blank" rel="noopener">源代码</a>）或者<a href="http://kennethreitz.com/xcode-gcc-and-homebrew.html" target="_blank" rel="noopener">OSX GCC Installer</a>（<a href="https://github.com/kennethreitz/osx-gcc-installer" target="_blank" rel="noopener">源代码</a>）来安装。</p>
+<p>如果你用的是Windows的话需要通过<a href="http://www.rubyinstaller.org/downloads/" target="_blank" rel="noopener">RubyInstaller</a>来安装安装Ruby，到上面的页面下载最新的Ruby和DevKit。首先安装Ruby（记得把Ruby加入到系统PATH变量，安装的时候有这个选项），然后双击解压下载的DevKit（自解压文件），通过命令提示符cd到解压的目录，执行<code>ruby dk.rb init</code>，然后再执行<code>ruby dk.rb install</code>，这样ruby就安装好了。</p>
+<h3 id="Markdown编辑器"><a href="#Markdown编辑器" class="headerlink" title="Markdown编辑器"></a>Markdown编辑器</h3><ul>
+<li>Mac推荐用<a href="http://mouapp.com/" target="_blank" rel="noopener">Mou</a>，国人开发的，免费的，你可以向作者提供一些<a href="http://mouapp.com/donate/" target="_blank" rel="noopener">赞助</a></li>
+<li>Windows可以用<a href="http://markdownpad.com/" target="_blank" rel="noopener">MarkdownPad</a></li>
+<li>Linux就自己找吧，应该也比较多</li>
+<li>除了以上介绍的几个编辑器之外，很多代码编辑器也支持</li>
+</ul>
+<h2 id="搭建你的Blog"><a href="#搭建你的Blog" class="headerlink" title="搭建你的Blog"></a>搭建你的Blog</h2><h3 id="配置与部署"><a href="#配置与部署" class="headerlink" title="配置与部署"></a>配置与部署</h3><p>配置<a href="http://octopress.org/" target="_blank" rel="noopener">Octopress</a>其实还是蛮简单的，只要根据官网上的<a href="http://octopress.org/docs/" target="_blank" rel="noopener">文档</a>一步一步来就可以了。我就简要介绍一下步骤吧（Windows下要在Git Shell命令行中执行命令）~</p>
+<p>首先要到<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>上创建一个仓库，仓库的名字是<code>&lt;username&gt;.github.com</code>，其中<code>&lt;username&gt;</code>是你的github上的用户名。创建好之后需要进入刚才建立的仓库，然后进入”Settings”，往下滚你会看到”GitHub Pages”，里面有个”Automatic Page Generator”按钮，点击它。然后是生成的首页和内容，别管它只需要点下面的”Continue to Layouts”按钮就行。接着就是选择模板，随便选一个然后按”PUBLISH”按钮即可。大约十分钟之后就可以看到通过”Automatic Page Generator”生成的页面了，当然这个你不需要管它，过一会会被<a href="http://octopress.org/" target="_blank" rel="noopener">Octopress</a>生成的静态页面给替换掉。</p>
+<p>接下来就要把<a href="http://octopress.org/" target="_blank" rel="noopener">Octopress</a>克隆下来了，在终端输入如下命令（可以参考<a href="http://octopress.org/docs/setup/" target="_blank" rel="noopener">http://octopress.org/docs/setup/</a>）：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/<span class="built_in">where</span>/you/want/to/<span class="built_in">clone</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/imathis/octopress.git</span><br><span class="line"><span class="built_in">cd</span> octopress</span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">gem install bundler</span><br><span class="line">bundle install</span><br><span class="line"><span class="comment"># 安装Octopress默认的主题</span></span><br><span class="line">rake install</span><br></pre></td></tr></table></figure></p>
+<p>然后是进行部署配置，执行命令（参考网址<a href="http://octopress.org/docs/deploying/github/" target="_blank" rel="noopener">http://octopress.org/docs/deploying/github/</a>）：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rake setup_github_pages</span><br></pre></td></tr></table></figure></p>
+<p>它会询问你并让你输入刚才所创建的仓库的地址：<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:<username>/<username>.github.com`，接下来是要配置一下你的_config.yml文件（参考网址：<a href="http://octopress.org/docs/configuring/" target="_blank" rel="noopener">http://octopress.org/docs/configuring/</a>），其实也比较简单，根据自己的实际情况修改一下就行了，这里就不做过多的解释了。</username></username></p>
+<p>然后你可执行一下命令来预览你的Blog：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rake generate <span class="comment"># 生成文件</span></span><br><span class="line">rake preview <span class="comment"># 生成本地预览，地址是 http://localhost:400</span></span><br></pre></td></tr></table></figure></p>
+<p>如果你觉得我没有问题就可以通过下面的命令将博客部署到GitHub上了<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rake deploy <span class="comment"># 会将通过rake generate生成的文件_deploy下的内容push到GitHub的master分支上</span></span><br></pre></td></tr></table></figure></p>
+<p>记得输入如下命令将所有的改动push到GitHub上<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'your message'</span></span><br><span class="line">git push origin <span class="built_in">source</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="撰写Blog"><a href="#撰写Blog" class="headerlink" title="撰写Blog"></a>撰写Blog</h3><p>在终端中执行如下命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rake new_post[<span class="string">'Post Title'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>此命令会在source/_post/目录下生成一个类似于2012-01-05-post-title.markdown的文件，用Markdown编辑器编辑这个文件，最上面的<code>---</code>中间的部分是yml格式的一些关于文章的信息，具体含义请参考：<a href="https://github.com/mojombo/jekyll/wiki/yaml-front-matter" target="_blank" rel="noopener">https://github.com/mojombo/jekyll/wiki/yaml-front-matter</a></p>
+<p>编辑好文章之后执行如下命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rake generate <span class="comment"># 生成文件</span></span><br><span class="line">rake preview <span class="comment"># 如果你想在本地查看一下的话</span></span><br><span class="line">rake deploy <span class="comment"># 部署到GitHub上</span></span><br></pre></td></tr></table></figure></p>
+<p>然后你应该就可以在<code>http://&lt;username&gt;.github.com</code>上看到你写的文章了，更多命令请参考<a href="http://octopress.org/docs/blogging/" target="_blank" rel="noopener">http://octopress.org/docs/blogging/</a></p>
+<h3 id="绑定自己的域名"><a href="#绑定自己的域名" class="headerlink" title="绑定自己的域名"></a>绑定自己的域名</h3><p>如果你想绑定自己的域名也是可以的，方法也很简单~。首先要参考GitHub上的帮助文章<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages" target="_blank" rel="noopener">https://help.github.com/articles/setting-up-a-custom-domain-with-pages</a>来设置自己域名的DNS。然后执行下面的命令（<a href="http://octopress.org/docs/deploying/github/#custom_domains" target="_blank" rel="noopener">参考</a>）：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'yourdomain.com'</span> &gt; <span class="built_in">source</span>/CNAME</span><br></pre></td></tr></table></figure></p>
+<p>接下来就是等待域名解析生效了~</p>
+<h3 id="一些小提示"><a href="#一些小提示" class="headerlink" title="一些小提示"></a>一些小提示</h3><p>记得每次写完文章之后用如下命令将写的文章同步到GitHub上：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git commit <span class="string">'your message'</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure></p>
+<p>这样你的文章就不会丢失了~，哪怕是重装电脑~，下次只需要把GitHub仓库clone下来然后重做上面的某些步骤就可以了!不过你也可以将文件保存到<a href="http://db.tt/062Uch29" target="_blank" rel="noopener">Dropbox</a>上，也是很方便的。</p>
+<p>更多信息和更高级的内容请参考Octopress的<a href="http://octopress.org/docs/" target="_blank" rel="noopener">官方文档</a>和Jekyll的<a href="https://github.com/mojombo/jekyll/wiki" target="_blank" rel="noopener">Wiki</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/octopress/" rel="tag"># Octopress</a>
+          
+            <a href="/tags/github/" rel="tag"># GitHub</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/01/13/os-x-xia-ru-he-shi-xian-pi-liang-zhong-ming-ming-wen-jian/" rel="prev" title="OS X 下如何实现批量重命名文件">
+                OS X 下如何实现批量重命名文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Yozone W.">
+            
+              <p class="site-author-name" itemprop="name">Yozone W.</p>
+              <div class="site-description motion-element" itemprop="description">iOS Developer</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/azone" title="GitHub &rarr; https://github.com/azone" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="mailto:wangyaozh@gmail.com" title="E-Mail &rarr; mailto:wangyaozh@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/azone163" title="Weibo &rarr; https://weibo.com/azone163" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/azone163" title="Twitter &rarr; https://twitter.com/azone163" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.jiangle.name/" title="http://www.jiangle.name/" rel="noopener" target="_blank">江乐的博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.makeex.com/" title="http://blog.makeex.com/" rel="noopener" target="_blank">Sun.Makee</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://liuduo.me/" title="http://liuduo.me/" rel="noopener" target="_blank">刘铎.Me</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些必要元素"><span class="nav-number">1.</span> <span class="nav-text">一些必要元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册GitHub账号"><span class="nav-number">1.1.</span> <span class="nav-text">注册GitHub账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建Git环境"><span class="nav-number">1.2.</span> <span class="nav-text">搭建Git环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Ruby"><span class="nav-number">1.3.</span> <span class="nav-text">安装Ruby</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown编辑器"><span class="nav-number">1.4.</span> <span class="nav-text">Markdown编辑器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建你的Blog"><span class="nav-number">2.</span> <span class="nav-text">搭建你的Blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置与部署"><span class="nav-number">2.1.</span> <span class="nav-text">配置与部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撰写Blog"><span class="nav-number">2.2.</span> <span class="nav-text">撰写Blog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定自己的域名"><span class="nav-number">2.3.</span> <span class="nav-text">绑定自己的域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些小提示"><span class="nav-number">2.4.</span> <span class="nav-text">一些小提示</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yozone W.</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script>
+  (function() {
+    var appid = 'cysVgpeBQ';
+    var conf = '9088a973838c9158f9e5d775cb10f9c1';
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+    }
+    else {
+      var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});
+    }
+  })();
+  </script>
+  <script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'u3bUmmwlc4DcxRvs4eXWbyrD-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'u3bUmmwlc4DcxRvs4eXWbyrD-gzGzoHsz',
+                'X-LC-Key': '6CCDedtK3iim5lQE1cCfy73V',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
