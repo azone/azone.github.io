@@ -863,7 +863,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-28 00:44:29" itemprop="dateModified" datetime="2019-03-28T00:44:29+08:00">2019-03-28</time>
+                <time title="修改时间：2019-04-03 01:44:25" itemprop="dateModified" datetime="2019-04-03T01:44:25+08:00">2019-04-03</time>
               
             
           </span>
@@ -1153,7 +1153,8 @@
       
         
           <p>这一段时间一个Core Data数据迁移的问题快把我搞死了，上面给的压力也非常大。先说一下来龙去脉吧~</p>
-<h2 id="第一次犯错"><a href="#第一次犯错" class="headerlink" title="第一次犯错"></a>第一次犯错</h2><p>首先以我为主程的一个应用（绝大部分代码是我写的）由于之前数据库设计的不合理导致应用总是无规律可循的崩溃。这个问题一直存在了好几个月，怎么研究都是无果。后来直到看到Stack Overflow上<a href="http://stackoverflow.com/a/20446844/397718" target="_blank" rel="noopener">Core Data: EXC_BAD_ACCESS accessing relationship</a>的帖子（后来还看到这个<a href="http://stackoverflow.com/a/6327448/" target="_blank" rel="noopener">Semantic Issue: Property’s synthesized getter follows Cocoa naming convention for returning ‘owned’ objects</a>）才意识到自己的愚蠢和无知！我忘记了Objective-C的属性名（Core Data中包括属性名和关系名）不能以new打头，否则就违反了Objective-C的<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmRules.html" target="_blank" rel="noopener">内存管理策略</a>。</p>
+<h2 id="第一次犯错"><a class="markdownIt-Anchor" href="#第一次犯错"></a> 第一次犯错</h2>
+<p>首先以我为主程的一个应用（绝大部分代码是我写的）由于之前数据库设计的不合理导致应用总是无规律可循的崩溃。这个问题一直存在了好几个月，怎么研究都是无果。后来直到看到Stack Overflow上<a href="http://stackoverflow.com/a/20446844/397718" target="_blank" rel="noopener">Core Data: EXC_BAD_ACCESS accessing relationship</a>的帖子（后来还看到这个<a href="http://stackoverflow.com/a/6327448/" target="_blank" rel="noopener">Semantic Issue: Property’s synthesized getter follows Cocoa naming convention for returning ‘owned’ objects</a>）才意识到自己的愚蠢和无知！我忘记了Objective-C的属性名（Core Data中包括属性名和关系名）不能以new打头，否则就违反了Objective-C的<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmRules.html" target="_blank" rel="noopener">内存管理策略</a>。</p>
 <p><strong>请记住：尽量不要使用以alloc、new、copy和mutableCopy等打头的属性名、关系名和方法名，如果必须使用请在声明中使用<code>NS_RETURNS_RETAINED</code>或<code>NS_RETURNS_NOT_RETURNED</code>，否则会导致内存管理问题！！！</strong></p>
           <!--noindex-->
           
@@ -1966,7 +1967,7 @@
 
       
         
-          <p>上周看了WWDC 2012的Session 402 - Working Efficiently with Xcode，顺便记了一些笔记。看了之后才注意到很多Xcode的快捷键和特性都没用过或者说没想到过用~，平时用的太死板，只是用了<code>+R</code>之类的快捷键。现在把上周整理的笔记贴上来吧~<br>
+          <p>上周看了WWDC 2012的Session 402 - Working Efficiently with Xcode，顺便记了一些笔记。看了之后才注意到很多Xcode的快捷键和特性都没用过或者说没想到过用<sub>，平时用的太死板，只是用了`+R`之类的快捷键。现在把上周整理的笔记贴上来吧</sub></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1978,7 +1979,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     
 
@@ -2170,7 +2171,7 @@
 
       
         
-          <p>今天发现Octopress一个小小的问题，就是无法将外链在新窗口中打开。于是就自己写了一小段javascript代码轻易的解决了这个问题。<br>
+          <p>今天发现Octopress一个小小的问题，就是无法将外链在新窗口中打开。于是就自己写了一小段javascript代码轻易的解决了这个问题。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -2182,7 +2183,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     
 
@@ -2374,7 +2375,7 @@
 
       
         
-          <p>Windows和Linux下批量重命名都是非常简单的（可以参考<a href="http://linux-wiki.cn/wiki/zh-hk/%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">批量重命名文件 - Linux Wiki</a>）。OS X当然也可以像Linux那样用命令行，但是又要通过<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>或者<a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>，对于很多人来说可能比较麻烦或者不会用命令行。我一直在想OS X这么高级的操作系统难道没有更好用的批量重命名的方法吗？答案是肯定的~<br>
+          <p>Windows和Linux下批量重命名都是非常简单的（可以参考<a href="http://linux-wiki.cn/wiki/zh-hk/%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">批量重命名文件 - Linux Wiki</a>）。OS X当然也可以像Linux那样用命令行，但是又要通过<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>或者<a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>，对于很多人来说可能比较麻烦或者不会用命令行。我一直在想OS X这么高级的操作系统难道没有更好用的批量重命名的方法吗？答案是肯定的~</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -2386,7 +2387,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     
 

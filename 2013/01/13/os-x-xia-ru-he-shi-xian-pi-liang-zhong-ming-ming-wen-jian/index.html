@@ -526,7 +526,9 @@
       
 
       
-        <p>Windows和Linux下批量重命名都是非常简单的（可以参考<a href="http://linux-wiki.cn/wiki/zh-hk/%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">批量重命名文件 - Linux Wiki</a>）。OS X当然也可以像Linux那样用命令行，但是又要通过<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>或者<a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>，对于很多人来说可能比较麻烦或者不会用命令行。我一直在想OS X这么高级的操作系统难道没有更好用的批量重命名的方法吗？答案是肯定的~<br><a id="more"></a><br>之前我一直没有用过系统自带的Automator这个强大的工具，更是没有想到要用，后来看了@ibuick的<a href="http://ibuick.com/online-store" target="_blank" rel="noopener">《OS X Mountain Lion高手进阶》</a>之后做一些操作之前总是先想一下能不能用Automator来代替我自动批量完成。下面了介绍一下怎么来通过Automator来做一个批量重命名的工具吧。</p>
+        <p>Windows和Linux下批量重命名都是非常简单的（可以参考<a href="http://linux-wiki.cn/wiki/zh-hk/%E6%89%B9%E9%87%8F%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">批量重命名文件 - Linux Wiki</a>）。OS X当然也可以像Linux那样用命令行，但是又要通过<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>或者<a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>，对于很多人来说可能比较麻烦或者不会用命令行。我一直在想OS X这么高级的操作系统难道没有更好用的批量重命名的方法吗？答案是肯定的~</p>
+<a id="more"></a>
+<p>之前我一直没有用过系统自带的Automator这个强大的工具，更是没有想到要用，后来看了@ibuick的<a href="http://ibuick.com/online-store" target="_blank" rel="noopener">《OS X Mountain Lion高手进阶》</a>之后做一些操作之前总是先想一下能不能用Automator来代替我自动批量完成。下面了介绍一下怎么来通过Automator来做一个批量重命名的工具吧。</p>
 <ol>
 <li>打开Automator，在弹出的“选取文稿类型”框中选择“服务”，设置 【“服务”收到选定的】选“文件或文件夹”、【位于】选“Finder”；</li>
 <li>在资源库中找到“给 Finder 项目重命名”，双击或拖到右边“工作流组装区”，<strong>记得勾选“工作流程运行时显示次操作”</strong>；</li>

@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="Fire Studio">
 <meta property="og:description" content="很久没写过日志了，原因没有别的，实在是鄙人太！懒！了！自己也想不能继续懒下去，所以决定改变从这里开始，先换个静态博客生成系统吧。好吧~，换系统其实和这个没多大关系，主要是因为 Octopress 已经 N 久没有更新了，还有就是对于一个 N 久没有写过博客的人来说，再用 Octopress 需要重新熟悉一下，相比之下 Hexo 就简单多了，还有就是据说生成速度上 Octopress 要比 Hexo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-27T16:44:29.156Z">
+<meta property="og:updated_time" content="2019-04-02T17:44:25.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从 Octopress 迁移到 Hexo">
 <meta name="twitter:description" content="很久没写过日志了，原因没有别的，实在是鄙人太！懒！了！自己也想不能继续懒下去，所以决定改变从这里开始，先换个静态博客生成系统吧。好吧~，换系统其实和这个没多大关系，主要是因为 Octopress 已经 N 久没有更新了，还有就是对于一个 N 久没有写过博客的人来说，再用 Octopress 需要重新熟悉一下，相比之下 Hexo 就简单多了，还有就是据说生成速度上 Octopress 要比 Hexo">
@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-28 00:44:29" itemprop="dateModified" datetime="2019-03-28T00:44:29+08:00">2019-03-28</time>
+                <time title="修改时间：2019-04-03 01:44:25" itemprop="dateModified" datetime="2019-04-03T01:44:25+08:00">2019-04-03</time>
               
             
           </span>
@@ -525,9 +525,11 @@
       
         <p>很久没写过日志了，原因没有别的，实在是鄙人太！懒！了！自己也想不能继续懒下去，所以决定改变从这里开始，先换个静态博客生成系统吧。好吧~，换系统其实和这个没多大关系，主要是因为 Octopress 已经 N 久没有更新了，还有就是对于一个 N 久没有写过博客的人来说，再用 <a href="http://octopress.org" target="_blank" rel="noopener">Octopress</a> 需要重新熟悉一下，相比之下 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 就简单多了，还有就是据说生成速度上 <a href="http://octopress.org" target="_blank" rel="noopener">Octopress</a> 要比 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 慢一大截。下面介绍一下 Mac 下 Hexo 的安装过程吧~</p>
 <a id="more"></a>
-<h3 id="安装-Node-js-与-Hexo"><a href="#安装-Node-js-与-Hexo" class="headerlink" title="安装 Node.js 与 Hexo"></a>安装 Node.js 与 Hexo</h3><p>建议通过 <a href="http://brew.sh" target="_blank" rel="noopener">Homebrew</a> 安装，原因是安装、升级和删除简单方便。当然也可以通过官网的安装包，但是通过安装包安装会有个问题，由于 <code>/usr/local/lib/dtrees</code> 和 <code>/usr/local/lib/node_modules</code> 目录的属主是 root:wheel 而不是当前用户，所以在执行 <code>npm install hexo-cli -g</code> 的时候会无法写入 <code>/usr/local/lib/node_modules</code> 而导致安装失败。如果用了 <code>sudo</code> 会有本地没有安装 <code>hexo</code> 的错误，让执行 <code>npm install hexo --save</code> 命令，因此也无法使用。</p>
+<h3 id="安装-nodejs-与-hexo"><a class="markdownIt-Anchor" href="#安装-nodejs-与-hexo"></a> 安装 Node.js 与 Hexo</h3>
+<p>建议通过 <a href="http://brew.sh" target="_blank" rel="noopener">Homebrew</a> 安装，原因是安装、升级和删除简单方便。当然也可以通过官网的安装包，但是通过安装包安装会有个问题，由于 <code>/usr/local/lib/dtrees</code> 和 <code>/usr/local/lib/node_modules</code> 目录的属主是 root:wheel 而不是当前用户，所以在执行 <code>npm install hexo-cli -g</code> 的时候会无法写入 <code>/usr/local/lib/node_modules</code> 而导致安装失败。如果用了 <code>sudo</code> 会有本地没有安装 <code>hexo</code> 的错误，让执行 <code>npm install hexo --save</code> 命令，因此也无法使用。</p>
 <p>通过上述方法安装完 <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a> 之后执行 <code>npm install -g hexo-cil</code> 即可完成安装。</p>
-<h3 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h3><ul>
+<h3 id="常用的命令"><a class="markdownIt-Anchor" href="#常用的命令"></a> 常用的命令</h3>
+<ul>
 <li><code>hexo init [blog directory name]</code> 初始化博客目录，如果后面目录名没有指定则是当前目录</li>
 <li><code>hexo g[enerate]</code> 生成静态文件</li>
 <li><code>hexo config</code> 获取和配置你的博客，可以通过 <code>_config.yml</code> 来直接更改配置（推荐！因为比较直观，但是要对 <a href="http://yaml.org" target="_blank" rel="noopener">Yaml</a> 格式有一定的了解，当然也是非常简单的）</li>
@@ -537,22 +539,26 @@
 <li><code>hexo m[igrate]</code> 从其他平台迁移到 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a></li>
 <li><code>hexo --help</code> 显示帮助，可以查看别的命令的帮助</li>
 </ul>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 的配置也是很简单的，只需要简单配置如下选项即可（其他的根据需要自己选择性的改一改就行了）：</p>
+<h3 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h3>
+<p><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 的配置也是很简单的，只需要简单配置如下选项即可（其他的根据需要自己选择性的改一改就行了）：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site，网站基本信息相关的内容</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Fire</span> <span class="string">Studio</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">记录，学习，成长</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">iOS</span> <span class="string">Developer</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Yozone</span> <span class="string">Wang</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL，网站网址</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://firestudio.cn</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/ ，可以到这里查看和使用别的主题，</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment 部署，最主要的，但是也很简单</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">git@github.com:azone/azone.github.io.git</span></span><br></pre></td></tr></table></figure>
 <p>预览之后才发现 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 不支持对 <a href="http://yaml.org" target="_blank" rel="noopener">Yaml</a> 格式代码的高亮。</p>
-<h3 id="迁移与部署"><a href="#迁移与部署" class="headerlink" title="迁移与部署"></a>迁移与部署</h3><p>由于我之前用的是 <a href="http://octopress.org" target="_blank" rel="noopener">Octopress</a> 而且他们的格式是相互兼容的，所以最简单的办法是只需要把之前 <a href="http://octopress.org" target="_blank" rel="noopener">Octopress</a> 下 <code>_post</code> 目录拷贝到 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 即可。但是有一点需要注意，一定要将之前的 <code>.markdown</code> 后缀改成 <code>.md</code>，否则文章生成的地址会是 <code>/yyyy/MM/dd/yyyy-MM-dd-title</code> 而不是 <code>/yyyy/MM/dd/title</code></p>
+<h3 id="迁移与部署"><a class="markdownIt-Anchor" href="#迁移与部署"></a> 迁移与部署</h3>
+<p>由于我之前用的是 <a href="http://octopress.org" target="_blank" rel="noopener">Octopress</a> 而且他们的格式是相互兼容的，所以最简单的办法是只需要把之前 <a href="http://octopress.org" target="_blank" rel="noopener">Octopress</a> 下 <code>_post</code> 目录拷贝到 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 即可。但是有一点需要注意，一定要将之前的 <code>.markdown</code> 后缀改成 <code>.md</code>，否则文章生成的地址会是 <code>/yyyy/MM/dd/yyyy-MM-dd-title</code> 而不是 <code>/yyyy/MM/dd/title</code></p>
 <p>如果是通过 git 或者 Github 部署的，则需要通过<code>npm install hexo-deployer-git --save</code>先安装 hexo-deployer-git 插件。</p>
 <p>当然也可以安装 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 提供的 <a href="http://hexo.io/plugins" target="_blank" rel="noopener">插件</a> ，然后通过 <code>hexo m[igrate] &lt;type&gt;</code> 迁移，最后通过 <code>hexo d[eploy]</code> 来部署。</p>
-<h3 id="我安装的几个插件"><a href="#我安装的几个插件" class="headerlink" title="我安装的几个插件"></a>我安装的几个插件</h3><p>由于今天才开始部署 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>，所以对 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 的插件了解的也不是太多，只装了几个：</p>
+<h3 id="我安装的几个插件"><a class="markdownIt-Anchor" href="#我安装的几个插件"></a> 我安装的几个插件</h3>
+<p>由于今天才开始部署 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>，所以对 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 的插件了解的也不是太多，只装了几个：</p>
 <ul>
 <li><a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a>，通过 <a href="http://git-scm.com" target="_blank" rel="noopener">GIT</a> 部署博客</li>
 <li><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a>，生成订阅</li>
 <li><a href="https://github.com/hexojs/hexo-generator-category" target="_blank" rel="noopener">hexo-generator-category</a>，生成分类</li>
 <li><a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="noopener">hexo-generator-sitemap</a>，生成网站地图</li>
 <li><a href="https://github.com/JamesPan/hexo-ruby-character" target="_blank" rel="noopener">hexo-ruby-character</a>，<ruby>为了好玩<rp> (</rp><rt>wèi le hǎo wán</rt><rp>) </rp></ruby>装了这个插件😄</li>
-<li><del><a href="https://github.com/akfish/hexo-math" target="_blank" rel="noopener">hexo-math</a> 显示数学方程式和符号等</del> (已使用主题自带功能) $\sum_{i=1}^n$</li>
+<li><s><a href="https://github.com/akfish/hexo-math" target="_blank" rel="noopener">hexo-math</a> 显示数学方程式和符号等</s> (已使用主题自带功能) $$\sum_{i=1}^n$$</li>
 </ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>该说的上面已经说了，总的来说还是很棒的。最后决定把评论系统从 <a href="https://disqus.com" target="_blank" rel="noopener">Disqus</a> 迁移到<a href="http://duoshuo.com" target="_blank" rel="noopener">多说</a>，毕竟多说是国内的，速度应该会快很多，Disqus 说不定哪天就被墙了。由于评论内容前一起来非常麻烦，而且评论内容非常少，所以决定评论内容就不迁移了。不说了，走起~</p>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>该说的上面已经说了，总的来说还是很棒的。最后决定把评论系统从 <a href="https://disqus.com" target="_blank" rel="noopener">Disqus</a> 迁移到<a href="http://duoshuo.com" target="_blank" rel="noopener">多说</a>，毕竟多说是国内的，速度应该会快很多，Disqus 说不定哪天就被墙了。由于评论内容前一起来非常麻烦，而且评论内容非常少，所以决定评论内容就不迁移了。不说了，走起~</p>
 <hr>
 <p><em>注意：文章中方括号中括起来的部分为可选部分</em></p>
 
@@ -852,7 +858,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Node-js-与-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Node.js 与 Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的命令"><span class="nav-number">2.</span> <span class="nav-text">常用的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迁移与部署"><span class="nav-number">4.</span> <span class="nav-text">迁移与部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我安装的几个插件"><span class="nav-number">5.</span> <span class="nav-text">我安装的几个插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-nodejs-与-hexo"><span class="nav-number">1.</span> <span class="nav-text"> 安装 Node.js 与 Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的命令"><span class="nav-number">2.</span> <span class="nav-text"> 常用的命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text"> 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迁移与部署"><span class="nav-number">4.</span> <span class="nav-text"> 迁移与部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我安装的几个插件"><span class="nav-number">5.</span> <span class="nav-text"> 我安装的几个插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
             
 
           </div>

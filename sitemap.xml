@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://firestudio.cn/2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/</loc>
+    <loc>http://firestudio.cn/about/index.html</loc>
     
-    <lastmod>2019-03-27T18:28:59.064Z</lastmod>
+    <lastmod>2019-04-02T17:51:17.097Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://firestudio.cn/about/index.html</loc>
+    <loc>http://firestudio.cn/2016/02/26/migrate-from-octopress-to-hexo/</loc>
     
-    <lastmod>2019-03-27T17:26:13.814Z</lastmod>
+    <lastmod>2019-04-02T17:44:25.221Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://firestudio.cn/2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/</loc>
+    
+    <lastmod>2019-03-27T18:28:59.064Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://firestudio.cn/tags/index.html</loc>
     
     <lastmod>2019-03-27T16:45:39.518Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://firestudio.cn/2016/02/26/migrate-from-octopress-to-hexo/</loc>
-    
-    <lastmod>2019-03-27T16:44:29.156Z</lastmod>
     
   </url>
   
@@ -86,14 +86,14 @@
   </url>
   
   <url>
-    <loc>http://firestudio.cn/2013/01/13/os-x-xia-ru-he-shi-xian-pi-liang-zhong-ming-ming-wen-jian/</loc>
+    <loc>http://firestudio.cn/2013/01/13/rang-octopresszai-xin-biao-qian-ye-zhong-da-kai-wai-lian/</loc>
     
     <lastmod>2019-03-27T14:23:09.914Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://firestudio.cn/2013/01/13/rang-octopresszai-xin-biao-qian-ye-zhong-da-kai-wai-lian/</loc>
+    <loc>http://firestudio.cn/2013/01/13/os-x-xia-ru-he-shi-xian-pi-liang-zhong-ming-ming-wen-jian/</loc>
     
     <lastmod>2019-03-27T14:23:09.914Z</lastmod>
     
