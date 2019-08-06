@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Fire Studio">
 <meta property="og:description" content="今天突然想写篇博客，看了上一篇的发表时间，已经快接近三年半了，着实惭愧啊~。这篇文章主要介绍一下前段时间突发奇想写的一个管理 iOS 主题的开源小库：ThemeManager。  为何要实现一个管理主题的库 其实做一个方便管理和切换 iOS 主题的库的想法是好几年前的事了，在这期间脑补过很多实现方案，当想开始做的时候又由于想到了方案的不足再加上我对切换主题没有什么需求，导致一直搁浅。前段时间突发奇">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-20T15:03:35.164Z">
+<meta property="og:updated_time" content="2019-08-06T13:45:38.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于 iOS 应用主题管理与动态切换的一些想法与实现">
 <meta name="twitter:description" content="今天突然想写篇博客，看了上一篇的发表时间，已经快接近三年半了，着实惭愧啊~。这篇文章主要介绍一下前段时间突发奇想写的一个管理 iOS 主题的开源小库：ThemeManager。  为何要实现一个管理主题的库 其实做一个方便管理和切换 iOS 主题的库的想法是好几年前的事了，在这期间脑补过很多实现方案，当想开始做的时候又由于想到了方案的不足再加上我对切换主题没有什么需求，导致一直搁浅。前段时间突发奇">
@@ -418,13 +418,23 @@
                 
               
 
-              <time title="创建时间：2019-07-20 01:08:41 / 修改时间：23:03:35" itemprop="dateCreated datePublished" datetime="2019-07-20T01:08:41+08:00">2019-07-20</time>
+              <time title="创建时间：2019-07-20 01:08:41" itemprop="dateCreated datePublished" datetime="2019-07-20T01:08:41+08:00">2019-07-20</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-06 21:45:38" itemprop="dateModified" datetime="2019-08-06T21:45:38+08:00">2019-08-06</time>
+              </span>
             
           
 
@@ -546,7 +556,14 @@
 <p>除了 UI 的样式之外，后来我也想到，我的 <code>ThemeManager</code> 不仅仅可以做主题的切换，还可以做多语言的切换等所有你能想得到的它可以实现的东西，而所有这些没有动到 <code>UIKit</code> 的任何一点东西，比如想做一个多语言的切换，可以简单的实现如下方法：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 需要实现 Theme 协议</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Language</span>: <span class="title">Theme</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> greeting: <span class="type">String</span> = <span class="string">"Hello"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化 ThemeManager 并使用默认的语言</span></span><br><span class="line"><span class="keyword">let</span> languageManager = <span class="type">ThemeManager</span>(<span class="type">Language</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置 label 的标题</span></span><br><span class="line">languageManager.setup(label) &#123; (label, language) <span class="keyword">in</span></span><br><span class="line">    label.text = language.greeting</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换语言，不管你用任何方式加载语言文件或初始化 Language，比如</span></span><br><span class="line"><span class="keyword">var</span> zhLanguage = <span class="type">Language</span>();</span><br><span class="line">zhLanguage.greeting = <span class="string">"你好"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 变更语言</span></span><br><span class="line">languageManager.apply(zhLanguage)</span><br></pre></td></tr></table></figure>
 <h4 id="将来可以新增的特性"><a class="markdownIt-Anchor" href="#将来可以新增的特性"></a> 将来可以新增的特性</h4>
-<p>这些功能虽然足够用了，但是我觉得还可以做得更多。iOS 13 马上就要发布了，大家都知道 iOS 13 加入了黑色主题的支持，下一步我想做的就是监听系统黑白主题的的变化，通过回调告诉外面，然后你自己做决定是否根据系统主题的切换而切换当前主题。虽然系统提供了自动切换题的方法，但是系统将你的主题限定死了，只能使用两种主题，想要实现更多的主题，通过我这个库来实现，没错的~。除了这个之外，我还想在下一版支持自定义动画切换功能。</p>
+<p>这些功能虽然足够用了，但是我觉得还可以做得更多。~~iOS 13 马上就要发布了，大家都知道 iOS 13 加入了黑色主题的支持，下一步我想做的就是监听系统黑白主题的的变化，通过回调告诉外面，然后你自己做决定是否根据系统主题的切换而切换当前主题。~~虽然系统提供了自动切换题的方法，但是系统将你的主题限定死了，只能使用两种主题，想要实现更多的主题，通过我这个库来实现，没错的~。除了这个之外，我还想在下一版支持自定义动画切换功能。</p>
+<hr>
+<h4 id="030-新功能"><a class="markdownIt-Anchor" href="#030-新功能"></a> 0.3.0 新功能</h4>
+<ul>
+<li>增加主题变更时的通知</li>
+<li>可以自定义动画</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// register notification</span></span><br><span class="line"><span class="type">NotificationCenter</span>.<span class="keyword">default</span>.addObserver(<span class="keyword">self</span>, selector: #selector(themeChanged(<span class="number">_</span>:)), name: .<span class="type">ThemeDidChange</span>, object: <span class="literal">nil</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// custom animation theme change animation</span></span><br><span class="line">themeManager.animationBlock = &#123;</span><br><span class="line">    <span class="type">UIView</span>.animate(withDuration: <span class="number">0.3</span>, animations: $<span class="number">0</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="优点总结"><a class="markdownIt-Anchor" href="#优点总结"></a> 优点总结</h3>
 <ul>
 <li>说到优点，首先一点就是对系统没有任何的入侵性，没有对系统库做任何修改；</li>
@@ -870,7 +887,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为何要实现一个管理主题的库"><span class="nav-number">1.</span> <span class="nav-text"> 为何要实现一个管理主题的库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题管理库的实现方案"><span class="nav-number">2.</span> <span class="nav-text"> 主题管理库的实现方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般的思路"><span class="nav-number">2.1.</span> <span class="nav-text"> 一般的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类似这种思路的缺点"><span class="nav-number">2.2.</span> <span class="nav-text"> 类似这种思路的缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我的思路"><span class="nav-number">2.3.</span> <span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后续的改进02"><span class="nav-number">2.4.</span> <span class="nav-text"> 后续的改进(0.2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将来可以新增的特性"><span class="nav-number">2.5.</span> <span class="nav-text"> 将来可以新增的特性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点总结"><span class="nav-number">3.</span> <span class="nav-text"> 优点总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为何要实现一个管理主题的库"><span class="nav-number">1.</span> <span class="nav-text"> 为何要实现一个管理主题的库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题管理库的实现方案"><span class="nav-number">2.</span> <span class="nav-text"> 主题管理库的实现方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般的思路"><span class="nav-number">2.1.</span> <span class="nav-text"> 一般的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类似这种思路的缺点"><span class="nav-number">2.2.</span> <span class="nav-text"> 类似这种思路的缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我的思路"><span class="nav-number">2.3.</span> <span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后续的改进02"><span class="nav-number">2.4.</span> <span class="nav-text"> 后续的改进(0.2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将来可以新增的特性"><span class="nav-number">2.5.</span> <span class="nav-text"> 将来可以新增的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#030-新功能"><span class="nav-number">2.6.</span> <span class="nav-text"> 0.3.0 新功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点总结"><span class="nav-number">3.</span> <span class="nav-text"> 优点总结</span></a></li></ol></div>
             
 
           </div>
