@@ -308,9 +308,9 @@
       <category term="Other" scheme="http://firestudio.cn/categories/other/"/>
     
     
-      <category term="GitHub" scheme="http://firestudio.cn/tags/github/"/>
-    
       <category term="Octopress" scheme="http://firestudio.cn/tags/octopress/"/>
+    
+      <category term="GitHub" scheme="http://firestudio.cn/tags/github/"/>
     
   </entry>
   

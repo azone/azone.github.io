@@ -96,7 +96,7 @@
 </script>
 
   <meta name="description" content="现在通过GitHub+Octopress来搭建个人博客的越来越多了。这几天我也试着通过这个试着搭建一下，开始觉得很折腾，后来折腾出来之后发现还是买简单的。 通过GitHub+Octopress搭建的博客有几个很显而易见的有点：">
-<meta name="keywords" content="GitHub,Octopress">
+<meta name="keywords" content="Octopress,GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何通过GitHub与Octopresss来搭建自己的博客">
 <meta property="og:url" content="http://firestudio.cn/2013/01/05/ru-he-tong-guo-github-yu-octopress-lai-da-jian-zi-ji-de-bo-ke/index.html">
@@ -619,9 +619,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
-          
             <a href="/tags/octopress/" rel="tag"><i class="fa fa-tag"></i> Octopress</a>
+          
+            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
           
         </div>
       
@@ -1103,26 +1103,19 @@
           if (results.length > 0) {
             var counter = results[0];
             
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
             
-              .done(function() {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.time + 1);
-              })
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
             
               .fail(function ({ responseJSON }) {
                 console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
               })
           } else {
             
-              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
-                .done(function() {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(1);
-                })
-                .fail(function() {
-                  console.log('Failed to create');
-                });
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
             
           }
         })
