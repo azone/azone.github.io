@@ -36,11 +36,11 @@
     
     
     
-    <category term="Swift" scheme="http://firestudio.cn/tags/swift/"/>
-    
     <category term="WWDC" scheme="http://firestudio.cn/tags/wwdc/"/>
     
     <category term="SwiftUI" scheme="http://firestudio.cn/tags/swiftui/"/>
+    
+    <category term="Swift" scheme="http://firestudio.cn/tags/swift/"/>
     
   </entry>
   
@@ -67,11 +67,11 @@
     <category term="Swift" scheme="http://firestudio.cn/categories/ios/uikit/swift/"/>
     
     
+    <category term="Swift" scheme="http://firestudio.cn/tags/swift/"/>
+    
     <category term="iOS" scheme="http://firestudio.cn/tags/ios/"/>
     
     <category term="UIKit" scheme="http://firestudio.cn/tags/uikit/"/>
-    
-    <category term="Swift" scheme="http://firestudio.cn/tags/swift/"/>
     
   </entry>
   
