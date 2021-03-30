@@ -1,149 +1,65 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
   <meta name="google-site-verification" content="b7JVQn8OvgfruYi3AhjeMcpf5MqsPknjvF4qzhP5Q6A">
 
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.2.0',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    }
-  };
-</script>
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"firestudio.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="今天突然想写篇博客，看了上一篇的发表时间，已经快接近三年半了，着实惭愧啊~。这篇文章主要介绍一下前段时间突发奇想写的一个管理 iOS 主题的开源小库：ThemeManager。  为何要实现一个管理主题的库 其实做一个方便管理和切换 iOS 主题的库的想法是好几年前的事了，在这期间脑补过很多实现方案，当想开始做的时候又由于想到了方案的不足再加上我对切换主题没有什么需求，导致一直搁浅。前段时间突发奇">
-<meta name="keywords" content="iOS,UIKit,Swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于 iOS 应用主题管理与动态切换的一些想法与实现">
 <meta property="og:url" content="http://firestudio.cn/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/index.html">
 <meta property="og:site_name" content="Fire Studio">
 <meta property="og:description" content="今天突然想写篇博客，看了上一篇的发表时间，已经快接近三年半了，着实惭愧啊~。这篇文章主要介绍一下前段时间突发奇想写的一个管理 iOS 主题的开源小库：ThemeManager。  为何要实现一个管理主题的库 其实做一个方便管理和切换 iOS 主题的库的想法是好几年前的事了，在这期间脑补过很多实现方案，当想开始做的时候又由于想到了方案的不足再加上我对切换主题没有什么需求，导致一直搁浅。前段时间突发奇">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T13:45:38.059Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-19T17:08:41.000Z">
+<meta property="article:modified_time" content="2019-08-06T13:45:38.059Z">
+<meta property="article:author" content="Yozone W.">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="UIKit">
+<meta property="article:tag" content="Swift">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于 iOS 应用主题管理与动态切换的一些想法与实现">
-<meta name="twitter:description" content="今天突然想写篇博客，看了上一篇的发表时间，已经快接近三年半了，着实惭愧啊~。这篇文章主要介绍一下前段时间突发奇想写的一个管理 iOS 主题的开源小库：ThemeManager。  为何要实现一个管理主题的库 其实做一个方便管理和切换 iOS 主题的库的想法是好几年前的事了，在这期间脑补过很多实现方案，当想开始做的时候又由于想到了方案的不足再加上我对切换主题没有什么需求，导致一直搁浅。前段时间突发奇">
+
+<link rel="canonical" href="http://firestudio.cn/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/">
 
 
-
-  <link rel="alternate" href="/atom.xml" title="Fire Studio" type="application/atom+xml">
-
-
-
-  
-  
-  <link rel="canonical" href="http://firestudio.cn/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
-  
   <title>关于 iOS 应用主题管理与动态切换的一些想法与实现 | Fire Studio</title>
   
-
-
-
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1990573-3"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-1990573-3');
-    }
-  </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1990573-3"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1990573-3');
+      }
+    </script>
 
 
   <script>
@@ -159,12 +75,8 @@
 
 
 
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -173,9 +85,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -185,161 +96,79 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</noscript>
 
+<link rel="alternate" href="/atom.xml" title="Fire Studio" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Fire Studio</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">记录，学习，成长</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fire Studio</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录，学习，成长</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-sitemap">
+        <li class="menu-item menu-item-sitemap">
 
-    
-    
-      
-    
-
-    
-
-    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+    <a href="/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>站点地图</a>
 
   </li>
-
-      
-      
-    </ul>
-  
-
-  
-
-  
+  </ul>
 </nav>
+
 
 
 
@@ -347,172 +176,99 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
+
+          <div class="content post posts-expand">
             
 
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
       <meta itemprop="description" content="iOS Developer">
-      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">关于 iOS 应用主题管理与动态切换的一些想法与实现
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          关于 iOS 应用主题管理与动态切换的一些想法与实现
+        </h1>
 
         <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2019-07-20 01:08:41" itemprop="dateCreated datePublished" datetime="2019-07-20T01:08:41+08:00">2019-07-20</time>
             </span>
-          
-
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2019-08-06 21:45:38" itemprop="dateModified" datetime="2019-08-06T21:45:38+08:00">2019-08-06</time>
               </span>
-            
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ios/uikit/" itemprop="url" rel="index"><span itemprop="name">UIKit</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ios/uikit/swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
                 </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ios/uikit/" itemprop="url" rel="index"><span itemprop="name">UIKit</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ios/uikit/swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+                </span>
+            </span>
 
           
-          
-            <span id="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" class="post-meta-item leancloud_visitors" data-flag-title="关于 iOS 应用主题管理与动态切换的一些想法与实现">
+            <span id="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" class="post-meta-item leancloud_visitors" data-flag-title="关于 iOS 应用主题管理与动态切换的一些想法与实现" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
             </span>
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
-    
 
     
     
@@ -520,13 +276,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <p>今天突然想写篇博客，看了上一篇的发表时间，已经快接近三年半了，着实惭愧啊~。这篇文章主要介绍一下前段时间突发奇想写的一个管理 iOS 主题的开源小库：<a href="https://github.com/azone/ThemeManager" target="_blank" rel="noopener">ThemeManager</a>。</p>
+        <p>今天突然想写篇博客，看了上一篇的发表时间，已经快接近三年半了，着实惭愧啊~。这篇文章主要介绍一下前段时间突发奇想写的一个管理 iOS 主题的开源小库：<a target="_blank" rel="noopener" href="https://github.com/azone/ThemeManager">ThemeManager</a>。</p>
 <h3 id="为何要实现一个管理主题的库"><a class="markdownIt-Anchor" href="#为何要实现一个管理主题的库"></a> 为何要实现一个管理主题的库</h3>
-<p>其实做一个方便管理和切换 iOS 主题的库的想法是好几年前的事了，在这期间脑补过很多实现方案，当想开始做的时候又由于想到了方案的不足再加上我对切换主题没有什么需求，导致一直搁浅。前段时间突发奇想，来了灵感，先在脑袋里打了个草稿，几周后着手开始做，加上一两天空闲时间做的实验，最终花了我一晚上的时间（下班后，包括代码 + Demo + README + 适配各种依赖管理工具(Swift Package, Carthage, CocoaPods，包括本地测试) + 传到 <a href="https://cocoapods.org/pods/WYZThemeManager" target="_blank" rel="noopener">CocoaPods</a> 上，最终两点多完成）终于把这个库做出来了。所以做这玩意纯粹是个人兴趣加上突发奇想。</p>
-<a id="more"></a>
+<p>其实做一个方便管理和切换 iOS 主题的库的想法是好几年前的事了，在这期间脑补过很多实现方案，当想开始做的时候又由于想到了方案的不足再加上我对切换主题没有什么需求，导致一直搁浅。前段时间突发奇想，来了灵感，先在脑袋里打了个草稿，几周后着手开始做，加上一两天空闲时间做的实验，最终花了我一晚上的时间（下班后，包括代码 + Demo + README + 适配各种依赖管理工具(Swift Package, Carthage, CocoaPods，包括本地测试) + 传到 <a target="_blank" rel="noopener" href="https://cocoapods.org/pods/WYZThemeManager">CocoaPods</a> 上，最终两点多完成）终于把这个库做出来了。所以做这玩意纯粹是个人兴趣加上突发奇想。</p>
+<span id="more"></span>
 <h3 id="主题管理库的实现方案"><a class="markdownIt-Anchor" href="#主题管理库的实现方案"></a> 主题管理库的实现方案</h3>
 <h4 id="一般的思路"><a class="markdownIt-Anchor" href="#一般的思路"></a> 一般的思路</h4>
 <p>依照常规的想法以及大部分现有开源库的思路，基本上都是先实现一个自定义的主题类，比如：<code>MyTheme</code>，在其中实现 UI 配置相关的属性，比如背景色、前景色、字体、背景图片等。然后实现一套自己的配置 UI 方面的方法，比如：<code>my_backgroundColor</code>，然后有一个叫 <code>ThemeManager</code> 的东西通过相应的方法负责切换主题，切换主题一般是 <code>ThemeManager</code> 发个通知，然后 UI 控件监听了此通知，然后做出相应的修改。我在 GitHub 上看到一个别人写的基于 Swift 的管理主题的库，也不知为何这么多 star，大致看了一下代码，虽然实现了切换主题的功能，但是设置 UI 属性时是将所有主题的相应属性值赋给 UI 属性，比如 <code>label.theme_textColor = [&quot;#000&quot;, &quot;#FFF&quot;]</code>，切换主题时通过 <code>ThemeManager.setTheme(index: isNight ? 1 : 0)</code> 这种方式，这种实现方式怎么说呢。。。我觉得只能用“呵呵”来代表我的想法吧。</p>
@@ -548,22 +301,22 @@
 <p>就是因为这些问题，困扰了我好几年的时间。前段时间突然开窍了，想到一个绝妙的方法来实现 UI 属性设置的问题，那就是通过闭包将设置属性的设置放进去，然后通过 <code>ThemeItem</code> 的结构体将 UI 和设置属性的闭包进行关联和存储。</p>
 <p>这个是实现了，但是怎么做到 UI 释放掉之后自动清空其闭包呢？这个也是费了我几天的时间来思考，开始的想法是通过 <code>Method Swizzling</code> 来交换 <code>dealloc</code> 方法，然后在交换方法中移除相应的 <code>ThemeItem</code>。但是代码写完了之后发现编译器报错了，是不允许交换 <code>dealloc</code> 方法的，网上搜了一下发现可以通过 <code>NSSelectorFromString</code> 的函数进行交换，试了一下结果并没有任何卵用，交换是失败的，没有走。。。最后突然来了灵光闪现，我可以通过 <code>objc runtime</code> 的关联对象特性来解决这个问题呀！</p>
 <p>我创建了一个 <code>DeallocObserver</code> 的类，里面放了两个属性，一个是记录需要观察被释放的对象的内存地址，这样我不需要对被观察对象进行引用，不会影响被观察者的生命周期；另一个是被观察对象被释放后需要执行的闭包，闭包有个参数值，就是存储的已释放对象之前的内存地址。我将 <code>DeallocObserver</code> 关联到被观察对象上，当被观察对象释放的时候，由于已经没人在引用 <code>DeallocObserver</code> 了，所以 <code>DeallocObserver</code> 也会紧接着被释放，此时就会执行到 <code>DeallocObserver</code> 的闭包，告诉外面做一些清理工作。比如我用来存储 <code>ThemeItem</code> 的变量 <code>private var managedItems = [Int: [ThemeItem]]()</code>，因为 <code>managedItems</code> 是个字典，Key 值为被观察对象的内存地址，所以只需要执行 <code>managedItems.removeValue(forKey:#memory address#)</code> 即可。</p>
-<p>Perfect! 所有的问题都解决了，实现方式超乎寻常的简单，最终代码只有不到 90 行，具体实现可以看一下 <a href="https://github.com/azone/ThemeManager/blob/0.1.0/Sources/ThemeManager/ThemeManager.swift" target="_blank" rel="noopener">ThemeManager.swift</a>。</p>
+<p>Perfect! 所有的问题都解决了，实现方式超乎寻常的简单，最终代码只有不到 90 行，具体实现可以看一下 <a target="_blank" rel="noopener" href="https://github.com/azone/ThemeManager/blob/0.1.0/Sources/ThemeManager/ThemeManager.swift">ThemeManager.swift</a>。</p>
 <h4 id="后续的改进02"><a class="markdownIt-Anchor" href="#后续的改进02"></a> 后续的改进(0.2)</h4>
 <p>由于第一版仅支持基于 UIView 的对象，发出去之后没几天想到一个想到一个了一个问题，有一些非继承自  UIView 的类就无法实现主题的切换了，比如一些继承自 <code>UIBarItem</code> 的类。那何必将其限定死为 <code>UIView</code> 呢？于是我将 <code>ThemeItem</code> 的类型限定开放为 AnyObject 了。</p>
 <p>这样做有什么好处？好处显而易见，我不经过可以动态设置 <code>UIView</code> 的属性，我还可以动态设置其它类型的属性，比如：<code>UIBarButtonItem</code> 的 <code>title</code>、<code>image</code> 等。另外我还改造了 <code>ThemeManager</code> 的 <code>setup</code> 方法，参数变为 Optional 参数，如果为 <code>nil</code> 就什么都不做，极大的方便了编码效率，举个例子，比如需要设置 <code>navigationController?.navigationBar</code> 的属性，我只需要通过如下代码即可轻松实现：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">themeManager.setup(navigationController?.navigationBar) &#123; (bar, theme) <span class="keyword">in</span></span><br><span class="line">    bar.tintColor = theme.mainColor</span><br><span class="line">    bar.barTintColor = theme.backgroundColor</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">themeManager.setup(navigationController<span class="operator">?</span>.navigationBar) &#123; (bar, theme) <span class="keyword">in</span></span><br><span class="line">    bar.tintColor <span class="operator">=</span> theme.mainColor</span><br><span class="line">    bar.barTintColor <span class="operator">=</span> theme.backgroundColor</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>除了 UI 的样式之外，后来我也想到，我的 <code>ThemeManager</code> 不仅仅可以做主题的切换，还可以做多语言的切换等所有你能想得到的它可以实现的东西，而所有这些没有动到 <code>UIKit</code> 的任何一点东西，比如想做一个多语言的切换，可以简单的实现如下方法：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 需要实现 Theme 协议</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Language</span>: <span class="title">Theme</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> greeting: <span class="type">String</span> = <span class="string">"Hello"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化 ThemeManager 并使用默认的语言</span></span><br><span class="line"><span class="keyword">let</span> languageManager = <span class="type">ThemeManager</span>(<span class="type">Language</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置 label 的标题</span></span><br><span class="line">languageManager.setup(label) &#123; (label, language) <span class="keyword">in</span></span><br><span class="line">    label.text = language.greeting</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换语言，不管你用任何方式加载语言文件或初始化 Language，比如</span></span><br><span class="line"><span class="keyword">var</span> zhLanguage = <span class="type">Language</span>();</span><br><span class="line">zhLanguage.greeting = <span class="string">"你好"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 变更语言</span></span><br><span class="line">languageManager.apply(zhLanguage)</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 需要实现 Theme 协议</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Language</span>: <span class="title">Theme</span> </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> greeting: <span class="type">String</span> <span class="operator">=</span> <span class="string">&quot;Hello&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化 ThemeManager 并使用默认的语言</span></span><br><span class="line"><span class="keyword">let</span> languageManager <span class="operator">=</span> <span class="type">ThemeManager</span>(<span class="type">Language</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置 label 的标题</span></span><br><span class="line">languageManager.setup(label) &#123; (label, language) <span class="keyword">in</span></span><br><span class="line">    label.text <span class="operator">=</span> language.greeting</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切换语言，不管你用任何方式加载语言文件或初始化 Language，比如</span></span><br><span class="line"><span class="keyword">var</span> zhLanguage <span class="operator">=</span> <span class="type">Language</span>();</span><br><span class="line">zhLanguage.greeting <span class="operator">=</span> <span class="string">&quot;你好&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 变更语言</span></span><br><span class="line">languageManager.apply(zhLanguage)</span><br></pre></td></tr></table></figure>
 <h4 id="将来可以新增的特性"><a class="markdownIt-Anchor" href="#将来可以新增的特性"></a> 将来可以新增的特性</h4>
 <p>这些功能虽然足够用了，但是我觉得还可以做得更多。~~iOS 13 马上就要发布了，大家都知道 iOS 13 加入了黑色主题的支持，下一步我想做的就是监听系统黑白主题的的变化，通过回调告诉外面，然后你自己做决定是否根据系统主题的切换而切换当前主题。~~虽然系统提供了自动切换题的方法，但是系统将你的主题限定死了，只能使用两种主题，想要实现更多的主题，通过我这个库来实现，没错的~。除了这个之外，我还想在下一版支持自定义动画切换功能。</p>
-<hr>
+<hr />
 <h4 id="030-新功能"><a class="markdownIt-Anchor" href="#030-新功能"></a> 0.3.0 新功能</h4>
 <ul>
 <li>增加主题变更时的通知</li>
 <li>可以自定义动画</li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// register notification</span></span><br><span class="line"><span class="type">NotificationCenter</span>.<span class="keyword">default</span>.addObserver(<span class="keyword">self</span>, selector: #selector(themeChanged(<span class="number">_</span>:)), name: .<span class="type">ThemeDidChange</span>, object: <span class="literal">nil</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// custom animation theme change animation</span></span><br><span class="line">themeManager.animationBlock = &#123;</span><br><span class="line">    <span class="type">UIView</span>.animate(withDuration: <span class="number">0.3</span>, animations: $<span class="number">0</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// register notification</span></span><br><span class="line"><span class="type">NotificationCenter</span>.default.addObserver(<span class="keyword">self</span>, selector: #selector(themeChanged(<span class="keyword">_</span>:)), name: .<span class="type">ThemeDidChange</span>, object: <span class="literal">nil</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// custom animation theme change animation</span></span><br><span class="line">themeManager.animationBlock <span class="operator">=</span> &#123;</span><br><span class="line">    <span class="type">UIView</span>.animate(withDuration: <span class="number">0.3</span>, animations: <span class="variable">$0</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="优点总结"><a class="markdownIt-Anchor" href="#优点总结"></a> 优点总结</h3>
 <ul>
 <li>说到优点，首先一点就是对系统没有任何的入侵性，没有对系统库做任何修改；</li>
@@ -574,399 +327,321 @@
 <li>体积小、使用简单，这个库总共代码行数才 89 行（0.2 版本，包括空行和注释），虽然代码少、实现简单，但是可以满足几乎所有主题和语言切换的所有功能；</li>
 <li>支持主题切换动画，是主题切换起来过渡自然（过渡动画仅对可见视图有效，不可见视图使用动画是无任何意义的）。</li>
 </ul>
-<p>最后，如果你觉得这个库还可以的话，那么欢迎您使用并 star，欢迎提出宝贵意见或者 PR。GitHub 地址：<a href="https://github.com/azone/ThemeManager" target="_blank" rel="noopener">https://github.com/azone/ThemeManager</a>。由于英文不够好，README 又全是用英文写的（真是胆大，献丑了😆），如果有什么不对的地方还望批评指正！</p>
-<p><em>刚才发现搜狐的畅言竟然给我加了一些恶心的广告，果断弃用，还是改用 <a href="https://disqus.com" target="_blank" rel="noopener">disqus</a> 吧，disqus 也是支持广告的，是可配置的，我准备开启一下试试。</em></p>
+<p>最后，如果你觉得这个库还可以的话，那么欢迎您使用并 star，欢迎提出宝贵意见或者 PR。GitHub 地址：<a target="_blank" rel="noopener" href="https://github.com/azone/ThemeManager">https://github.com/azone/ThemeManager</a>。由于英文不够好，README 又全是用英文写的（真是胆大，献丑了😆），如果有什么不对的地方还望批评指正！</p>
+<p><em>刚才发现搜狐的畅言竟然给我加了一些恶心的广告，果断弃用，还是改用 <a target="_blank" rel="noopener" href="https://disqus.com">disqus</a> 吧，disqus 也是支持广告的，是可配置的，我准备开启一下试试。</em></p>
 
-      
     </div>
 
     
-
-    
-      
-    
-
-    
     
     
 
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-        
+      <footer class="post-footer">
           
-        
-        <div class="post-tags">
-          
-            <a href="/tags/ios/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
-          
-            <a href="/tags/uikit/" rel="tag"><i class="fa fa-tag"></i> UIKit</a>
-          
-            <a href="/tags/swift/" rel="tag"><i class="fa fa-tag"></i> Swift</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/03/11/take-screenshot-of-eaglview-may-easily-cause-memory-leaks-in-swift/" rel="next" title="Swift 下 OpenGL 截图容易导致的内存泄露">
-                <i class="fa fa-chevron-left"></i> Swift 下 OpenGL 截图容易导致的内存泄露
-              </a>
-            
+          <div class="post-tags">
+              <a href="/tags/ios/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
+              <a href="/tags/uikit/" rel="tag"><i class="fa fa-tag"></i> UIKit</a>
+              <a href="/tags/swift/" rel="tag"><i class="fa fa-tag"></i> Swift</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/03/11/take-screenshot-of-eaglview-may-easily-cause-memory-leaks-in-swift/" rel="prev" title="Swift 下 OpenGL 截图容易导致的内存泄露">
+      <i class="fa fa-chevron-left"></i> Swift 下 OpenGL 截图容易导致的内存泄露
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/11/wwdc-2020-learning-notes-1/" rel="next" title="WWDC 2020 学习笔记（一）">
+      WWDC 2020 学习笔记（一） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
+  
 
-  <aside id="sidebar" class="sidebar">
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BD%95%E8%A6%81%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%A1%E7%90%86%E4%B8%BB%E9%A2%98%E7%9A%84%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text"> 为何要实现一个管理主题的库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E7%AE%A1%E7%90%86%E5%BA%93%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text"> 主题管理库的实现方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="nav-number">2.1.</span> <span class="nav-text"> 一般的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E4%BC%BC%E8%BF%99%E7%A7%8D%E6%80%9D%E8%B7%AF%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="nav-number">2.2.</span> <span class="nav-text"> 类似这种思路的缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="nav-number">2.3.</span> <span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E7%9A%84%E6%94%B9%E8%BF%9B02"><span class="nav-number">2.4.</span> <span class="nav-text"> 后续的改进(0.2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E6%9D%A5%E5%8F%AF%E4%BB%A5%E6%96%B0%E5%A2%9E%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">2.5.</span> <span class="nav-text"> 将来可以新增的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#030-%E6%96%B0%E5%8A%9F%E8%83%BD"><span class="nav-number">2.6.</span> <span class="nav-text"> 0.3.0 新功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text"> 优点总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  
-    <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Yozone W.">
-  
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yozone W."
+      src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Yozone W.</p>
-  <div class="site-description motion-element" itemprop="description">iOS Developer</div>
+  <div class="site-description" itemprop="description">iOS Developer</div>
 </div>
-
-
-  <nav class="site-state motion-element">
-    
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
           
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
-
-
-
-  <div class="feed-link motion-element">
-    <a href="/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
-
-
-
-
-
+</div>
   <div class="links-of-author motion-element">
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="https://github.com/azone" title="GitHub &rarr; https://github.com/azone" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <a href="https://github.com/azone" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;azone" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="mailto:wangyaozh@gmail.com" title="E-Mail &rarr; mailto:wangyaozh@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+        <a href="mailto:wangyaozh@gmail.com" title="E-Mail → mailto:wangyaozh@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="https://weibo.com/azone163" title="Weibo &rarr; https://weibo.com/azone163" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+        <a href="https://weibo.com/azone163" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;azone163" rel="noopener" target="_blank"><i class="weibo fa-fw"></i></a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-      
-        
-      
-        <a href="https://twitter.com/azone163" title="Twitter &rarr; https://twitter.com/azone163" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+        <a href="https://twitter.com/azone163" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;azone163" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
       </span>
-    
   </div>
 
 
-
-
-
-
-  <div class="links-of-blogroll motion-element links-of-blogroll-block">
-    <div class="links-of-blogroll-title">
-      <i class="fa  fa-fw fa-link"></i>
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
-      
         <li class="links-of-blogroll-item">
-          <a href="http://www.jiangle.name/" title="http://www.jiangle.name/" rel="noopener" target="_blank">江乐的博客</a>
+          <a href="http://www.jiangle.name/" title="http:&#x2F;&#x2F;www.jiangle.name&#x2F;" rel="noopener" target="_blank">江乐的博客</a>
         </li>
-      
         <li class="links-of-blogroll-item">
-          <a href="http://blog.makeex.com/" title="http://blog.makeex.com/" rel="noopener" target="_blank">Sun.Makee</a>
+          <a href="http://blog.makeex.com/" title="http:&#x2F;&#x2F;blog.makeex.com&#x2F;" rel="noopener" target="_blank">Sun.Makee</a>
         </li>
-      
         <li class="links-of-blogroll-item">
-          <a href="http://liuduo.me/" title="http://liuduo.me/" rel="noopener" target="_blank">刘铎.Me</a>
+          <a href="http://liuduo.me/" title="http:&#x2F;&#x2F;liuduo.me&#x2F;" rel="noopener" target="_blank">刘铎.Me</a>
         </li>
-      
     </ul>
   </div>
 
-
-          
-          
-        </div>
       </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为何要实现一个管理主题的库"><span class="nav-number">1.</span> <span class="nav-text"> 为何要实现一个管理主题的库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题管理库的实现方案"><span class="nav-number">2.</span> <span class="nav-text"> 主题管理库的实现方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般的思路"><span class="nav-number">2.1.</span> <span class="nav-text"> 一般的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类似这种思路的缺点"><span class="nav-number">2.2.</span> <span class="nav-text"> 类似这种思路的缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我的思路"><span class="nav-number">2.3.</span> <span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后续的改进02"><span class="nav-number">2.4.</span> <span class="nav-text"> 后续的改进(0.2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将来可以新增的特性"><span class="nav-number">2.5.</span> <span class="nav-text"> 将来可以新增的特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#030-新功能"><span class="nav-number">2.6.</span> <span class="nav-text"> 0.3.0 新功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点总结"><span class="nav-number">3.</span> <span class="nav-text"> 优点总结</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
 
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2013 – <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2013 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Yozone W.</span>
-
-  
-
-  
 </div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
-  
+        
+
+
+
+
+
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"u3bUmmwlc4DcxRvs4eXWbyrD-gzGzoHsz","app_key":"6CCDedtK3iim5lQE1cCfy73V","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
 </script>
 
 
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
 
 
 
@@ -976,67 +651,9 @@
 
 
   
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-
-
-  <script src="/js/utils.js?v=7.2.0"></script>
-
-  <script src="/js/motion.js?v=7.2.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/affix.js?v=7.2.0"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
-
-
-
-  <script src="/js/next-boot.js?v=7.2.0"></script>
 
   
 
-  
-
-  
-
-  
-
-  
-  
 <script>
   function loadCount() {
     var d = document, s = d.createElement('script');
@@ -1047,132 +664,26 @@
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
 </script>
-
-
 <script>
   var disqus_config = function() {
     this.page.url = "http://firestudio.cn/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/";
     this.page.identifier = "2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/";
-    this.page.title = '关于 iOS 应用主题管理与动态切换的一些想法与实现';
+    this.page.title = "关于 iOS 应用主题管理与动态切换的一些想法与实现";
     };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://firestudio.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    window.addEventListener('load', loadComments, false);
-  
-</script>
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-  
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://firestudio.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
     }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'u3bUmmwlc4DcxRvs4eXWbyrD-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'u3bUmmwlc4DcxRvs4eXWbyrD-gzGzoHsz',
-                'X-LC-Key': '6CCDedtK3iim5lQE1cCfy73V',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
-            if (localhost.test(document.URL)) return;
-            addCount(Counter);
-          
-        });
-    });
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
+  });
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
