@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="b7JVQn8OvgfruYi3AhjeMcpf5MqsPknjvF4qzhP5Q6A">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"firestudio.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="在日常使用电脑的过程中，经常会用到一些命令，并且可能要将一组命令结合才能完成自己想要的结果。如果常用的一些命令（组合）每次使用都重新敲的话，势必会影响效率。此时你可能会想到类似于 make 这样的工具，当然这也是一个选择，但是 make 的缺点也是显而易见的（有兴趣的可以通过 makefile 介绍 — 跟我一起写 Makefile 1.0 文档 来入门）。几个月前我无意中发现了just，感觉在日">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 just 组织和管理常用命令集">
+<meta property="og:url" content="http://firestudio.cn/2023/07/28/manage-commands-using-just/index.html">
+<meta property="og:site_name" content="Fire Studio">
+<meta property="og:description" content="在日常使用电脑的过程中，经常会用到一些命令，并且可能要将一组命令结合才能完成自己想要的结果。如果常用的一些命令（组合）每次使用都重新敲的话，势必会影响效率。此时你可能会想到类似于 make 这样的工具，当然这也是一个选择，但是 make 的缺点也是显而易见的（有兴趣的可以通过 makefile 介绍 — 跟我一起写 Makefile 1.0 文档 来入门）。几个月前我无意中发现了just，感觉在日">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-28T14:05:41.000Z">
+<meta property="article:modified_time" content="2023-07-28T14:12:18.281Z">
+<meta property="article:author" content="Yozone W.">
+<meta property="article:tag" content="iOS, OS X, Objective-C, Swift, Xcode and so on.">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://firestudio.cn/2023/07/28/manage-commands-using-just/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>用 just 组织和管理常用命令集 | Fire Studio</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1990573-3"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1990573-3');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ebf7a216144a17f1a6367e562014adf";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Fire Studio" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fire Studio</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录，学习，成长</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2023/07/28/manage-commands-using-just/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Yozone W.">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fire Studio">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用 just 组织和管理常用命令集
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-07-28 22:05:41 / 修改时间：22:12:18" itemprop="dateCreated datePublished" datetime="2023-07-28T22:05:41+08:00">2023-07-28</time>
+            </span>
+
+          
+            <span id="/2023/07/28/manage-commands-using-just/" class="post-meta-item leancloud_visitors" data-flag-title="用 just 组织和管理常用命令集" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2023/07/28/manage-commands-using-just/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/07/28/manage-commands-using-just/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在日常使用电脑的过程中，经常会用到一些命令，并且可能要将一组命令结合才能完成自己想要的结果。如果常用的一些命令（组合）每次使用都重新敲的话，势必会影响效率。此时你可能会想到类似于 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/make/" title="make">make</a> 这样的工具，当然这也是一个选择，但是 make 的缺点也是显而易见的（有兴趣的可以通过 <a target="_blank" rel="noopener" href="https://seisman.github.io/how-to-write-makefile/introduction.html" title="makefile介绍 — 跟我一起写Makefile 1.0 文档">makefile 介绍 — 跟我一起写 Makefile 1.0 文档</a> 来入门）。几个月前我无意中发现了<a target="_blank" rel="noopener" href="https://just.systems/" title="just">just</a>，感觉在日常使用中完全可以替代 make。</p>
+<p>just 语法和 make 很类似，如果你有 make 基础的话，可以很快上手。下面简单介绍一下 just 的用法以及和 make 的一些区别（首先一个区别是 Makefile 中每个执行项叫做目标（target），而 just 中叫做配方（recipe））：</p>
+<ul>
+<li>
+<p>首先 just 和 make 一样，需要一个 Justfile（make 是 Makefile，just 这个文件的文件名可以是 Justfile、justfile 或者 .justfile 等），不区分大小写，可以在前面加个<code>.</code>来隐藏这个文件。<strong>just 会从当前目录向上查找 justfile 文件，而 make 不会。</strong> 这就意味着只有某一个父级目录存在一个 justfile 文件，那就可以执行该 justfile 里的相关的代码。</p>
+</li>
+<li>
+<p>如果 Makefile 的在当前目录下存在一个文件，这个文件和某个 target 名称相同，则这个 target 就不会执行，并且打印出错误信息：<code>make: xxx' is up to date.</code>，此时你需要在 Makefile 文件中加上一样 <code>.PHONY xxx</code> 来防止此问题的发生，just 则没有此问题。</p>
+</li>
+<li>
+<p>Makefile 中 target 可以对另一个 target 进行依赖（即先执行另一个 target，执行完毕后在执行当前的 target），just 也可以，而且 just 还有“后依赖”，例如：</p>
+</li>
+</ul>
+<figure class="highlight make"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">list_file := <span class="string">&quot;formulae-list.json&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># generate installed homebrew formulae list json file</span></span><br><span class="line"><span class="section">@generate-list: &amp;&amp; preview</span></span><br><span class="line">  brew leaves | xargs brew info --json | \</span><br><span class="line">  jq &#x27;[.[]|&#123;<span class="string">&quot;name&quot;</span>, <span class="string">&quot;desc&quot;</span>, <span class="string">&quot;homepage&quot;</span>, <span class="string">&quot;tap&quot;</span>, <span class="string">&quot;caveats&quot;</span>, <span class="string">&quot;linked_keg&quot;</span>&#125;]&#x27; &gt; &#123;&#123;list_file&#125;&#125;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>在执行了 <code>just generate-list</code> 之后，会执行 <code>preview</code> 这个 recipe。</p>
+<ul>
+<li>just 中 recipe 支持<a target="_blank" rel="noopener" href="https://just.systems/man/zh/chapter_37.html" title="配方参数">配方参数</a>：</li>
+</ul>
+<figure class="highlight make"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">recipe P=&#x27;D&#x27;:</span><br><span class="line">  echo &#123;&#123;P&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的例子中 <code>recipe</code> 有一个参数 <code>P</code>，并且有个默认值 D，可以在下面的命令中用 <code>&#123;&#123;P&#125;&#125;</code> 来使用这个参数（使用的是<a target="_blank" rel="noopener" href="https://mustache.github.io/" title="mustache">mustache</a>来进行变量替换），除此之外还可以用 <code>*P</code>代表该参数有 0 到多个值，<code>+P</code> 表示 1 到多个值。调用的时候可以用 <code>just recipe E</code> 就可以改变 <code>P</code> 的值为 <code>E</code>。</p>
+<ul>
+<li>
+<p>just 可以通过 <code>set shell := [&quot;any-available-shell&quot;, &quot;-c&quot;]</code> 的方式来改变默认的 shell；另外还可以加载 .env 文件的环境变量，只需要在 justfile 文件中加入 <code>set dotenv-load</code> 即可。</p>
+</li>
+<li>
+<p>just 默认的情况下每一行是一条命令（想要写成多行需要在每行的行尾加上 <code>\</code>，使用的是默认的 shell 来执行），但是你可以通过 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Shebang" title="Shebang">Shebang</a> 来执行不同的脚本，这要看你想使用什么脚本，sh、bash、zsh、ksh、fish、python、ruby……一切支持 Shebang 的脚本，例如：</p>
+</li>
+</ul>
+<figure class="highlight make"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">push-changes:</span></span><br><span class="line">    <span class="comment">#!/usr/bin/env fish</span></span><br><span class="line">    set -e IFS</span><br><span class="line">    set MSG (./scripts/list-diff.py)</span><br><span class="line">    if test -z $MSG</span><br><span class="line">        echo <span class="string">&quot;Nothing to commit&quot;</span></span><br><span class="line">        exit 0</span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    set DS (date +&#x27;%Y-%m-%d %H:%M:%S&#x27;)</span><br><span class="line">    set HEADLINE <span class="string">&quot;Updates ($DS)&quot;</span></span><br><span class="line">    set COMMIT_MSG <span class="string">&quot;&quot;</span><span class="string">&quot;$HEADLINE</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    $MSG</span></span><br><span class="line"><span class="string">    &quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line">    git commit -am <span class="string">&quot;$COMMIT_MSG&quot;</span></span><br><span class="line">    git push</span><br></pre></td></tr></table></figure>
+<p>再如可以使用 Python 脚本写：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数一下当前 iOS 使用了多少个 pods</span></span><br><span class="line">[no-cd, no-exit-message]</span><br><span class="line"><span class="section">count-pods:</span></span><br><span class="line">  <span class="comment">#!/usr/bin/env python3</span></span><br><span class="line">  import os, sys</span><br><span class="line">  try:</span><br><span class="line">      import yaml</span><br><span class="line">  except ImportError:</span><br><span class="line">      sys.stderr.write(&#x27;Please install pyyaml first&#x27;)</span><br><span class="line">      sys.stderr.flush()</span><br><span class="line">      exit(1)</span><br><span class="line"></span><br><span class="line">  file = &#x27;Podfile.lock&#x27;</span><br><span class="line">  if not os.path.exists(file):</span><br><span class="line">      sys.stderr.write(&#x27;Podfile.lock not found&#x27;)</span><br><span class="line">      sys.stderr.flush()</span><br><span class="line">      exit(1)</span><br><span class="line"></span><br><span class="line">  with open(file) as f:</span><br><span class="line">      contents = yaml.load(f, yaml.Loader)</span><br><span class="line">      print(len(contents[&#x27;SPEC CHECKSUMS&#x27;]))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>just 默认是会打印每条命令的，可以在每条命令前加上 <code>@</code> 来取消打印（这一点和 make 一样），如果想要整个 recipe 不打印任何执行的命令，只需要在这个 recipe 前面加上 <code>@</code> 即可。但是有个问题，不知道是不是 bug，就是如果你在有 Shebang 的 recipe 前加上 <code>@</code> 的话反而会把整个 recipe 打印出来。</p>
+</li>
+<li>
+<p>just 支持私有的 recipe，可以在 recipe 前加上一个 <code>_</code> 或者在 recipe 的上方加上 <code>[private]</code> 属性让其变成私有；如果一个 recipe 设置为私有，则在执行 <code>just -l</code> 时就不会被列出来。</p>
+<p><em><code>just -l</code> 有些类似于大部分命令的 <code>--help</code> 参数，它会列出来所有非私有的 recipe，后面跟着每个 recipe 的注释；另外还可以通过 <code>just --choose</code> 交互的执行相应的 recipe（会结合 <code>fzf</code>）</em></p>
+</li>
+<li>
+<p>just 中默认会选择 justfile 文件中的第一个 recipe 来作为默认的 recipe，也可以通过 <code>default</code> recipe 来指定，例如：</p>
+</li>
+</ul>
+<figure class="highlight make"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有可用的 recipe</span></span><br><span class="line"><span class="section">default:</span></span><br><span class="line">  just -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者另外一个</span></span><br><span class="line"><span class="comment"># 生成所有列表</span></span><br><span class="line"><span class="section">@default:</span></span><br><span class="line">  just generate-list &gt; /dev/null</span><br><span class="line">  just generate-cask-list &gt; /dev/null</span><br><span class="line">  just generate-crate-list</span><br></pre></td></tr></table></figure>
+<p>执行默认 recipe 不需要额外的参数，只需要执行 <code>just</code> 即可。</p>
+<ul>
+<li>justfile 中可以通过 <code>variable_name := variable</code> 的形式来设置变量，可以在执行 recipe 的时候传入不同的变量，例如：</li>
+</ul>
+<figure class="highlight make"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name := <span class="string">&quot;world&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">@hello:</span></span><br><span class="line">  echo Hello &#123;&#123; name &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>这里定义了一个变量为 <code>name</code>，默认值为字符串 <code>world</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">just hello <span class="comment"># 会打印出 Hello world</span></span><br><span class="line">just hello name=Logan <span class="comment"># 会打印出 Hello Logan</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>一些常见的 <a target="_blank" rel="noopener" href="https://just.systems/man/zh/chapter_31.html" title="recipe 属性">recipe 属性</a>：</p>
+<ul>
+<li><code>[private]</code>：将 recipe 标记为私有</li>
+<li><code>[no-exit-message]</code>：如果配方执行失败，不要打印错误信息</li>
+<li><code>[no-cd]</code>：在执行配方之前不要改变目录。这里需要注意，默认情况下 just 在执行 recipe 的时候会将当前目录改变到 justfile 所在的目录，如果加上了此属性则不会改变目录，命令执行时当前的目录（<code>pwd</code>）为执行 just 时所在的目录。</li>
+<li>另外还有一些只有在指定操作系统下 recipe 才有效的属性，如：<code>[linux]</code>，<code>[macos]</code> 等，详情请见 just 的文档。</li>
+</ul>
+</li>
+</ul>
+<p>just 在日常还是很好用的（结合 <code>fzf</code>、自己喜欢的脚本等可以实现出很有意思的功能），但是终究无法代替 make，毕竟两者的定位不同。just 重在命令的管理和组织，而 make 在是定位为编译工具，在 C/C++ 的编译方面无法撼动。这篇文章一个月前就想写了，想来想去也不知道如何着手，后来想想其实也算只是推荐而已，更详细的看<a target="_blank" rel="noopener" href="https://just.systems/man/zh/" title="说明 - Just 用户指南">说明 - Just 用户指南</a>足够了。我在平时的工作和生活中已经大量运用 just 来帮助我做一些事情了。除了一些官方和一些开源的 justfile 示例外，也可以看一下我自己写的一个小玩意儿里的 <a target="_blank" rel="noopener" href="https://github.com/azone/mac-bootstrap/blob/master/Justfile" title="Justfile">Justfile</a>。工作中用到的一些 recipe 就不方便分享出来了，但是如果有什么问题也欢迎留言交流。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" rel="prev" title="关于 iOS 应用主题管理与动态切换的一些想法与实现">
+      <i class="fa fa-chevron-left"></i> 关于 iOS 应用主题管理与动态切换的一些想法与实现
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yozone W."
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Yozone W.</p>
+  <div class="site-description" itemprop="description">iOS Developer</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/azone" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;azone" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangyaozh@gmail.com" title="E-Mail → mailto:wangyaozh@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/azone163" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;azone163" rel="noopener" target="_blank"><i class="weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/azone163" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;azone163" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.jiangle.name/" title="http:&#x2F;&#x2F;www.jiangle.name&#x2F;" rel="noopener" target="_blank">江乐的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.makeex.com/" title="http:&#x2F;&#x2F;blog.makeex.com&#x2F;" rel="noopener" target="_blank">Sun.Makee</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://liuduo.me/" title="http:&#x2F;&#x2F;liuduo.me&#x2F;" rel="noopener" target="_blank">刘铎.Me</a>
+        </li>
+    </ul>
+  </div>
+
+<div class="motion-element">
+  <img src="/images/mp_qr_code.jpg" />
+</div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2013 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yozone W.</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"u3bUmmwlc4DcxRvs4eXWbyrD-gzGzoHsz","app_key":"6CCDedtK3iim5lQE1cCfy73V","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://firestudio.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://firestudio.cn/2023/07/28/manage-commands-using-just/";
+    this.page.identifier = "2023/07/28/manage-commands-using-just/";
+    this.page.title = "用 just 组织和管理常用命令集";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://firestudio.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
