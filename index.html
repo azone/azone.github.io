@@ -2,9 +2,10 @@
 <html lang="zh-CN">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -14,14 +15,14 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"firestudio.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.css" integrity="sha256-RvRHGSuWAxZpXKV9lLDt2e+rZ+btzn48Wp4ueS3NZKs=" crossorigin="anonymous">
 
-  <meta name="description" content="iOS Developer">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"firestudio.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="iOS Developer">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Fire Studio">
 <meta property="og:url" content="http://firestudio.cn/index.html">
@@ -32,213 +33,228 @@
 <meta property="article:tag" content="iOS, OS X, Objective-C, Swift, Xcode and so on.">
 <meta name="twitter:card" content="summary">
 
+
 <link rel="canonical" href="http://firestudio.cn/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
 
-  <title>Fire Studio</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Fire Studio</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1990573-3"></script>
-    <script>
-      if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-1990573-3');
-      }
-    </script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-1990573-3","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?9ebf7a216144a17f1a6367e562014adf"></script>
 
 
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?9ebf7a216144a17f1a6367e562014adf";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
+
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 <link rel="alternate" href="/atom.xml" title="Fire Studio" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Fire Studio</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">记录，学习，成长</p>
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
     </div>
   </div>
 </div>
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>站点地图</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
   </ul>
 </nav>
 
 
 
 
-</div>
-    </header>
+</header>
+        
+  
+  <aside class="sidebar">
 
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yozone W."
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Yozone W.</p>
+  <div class="site-description" itemprop="description">iOS Developer</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/azone" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;azone" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wangyaozh@gmail.com" title="E-Mail → mailto:wangyaozh@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/azone163" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;azone163" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/azone163" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;azone163" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
   </div>
 
+<div class="motion-element">
+  <img src="/images/mp_qr_code.jpg" />
+</div>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+        </div>
+      </div>
+    </div>
 
-          <div class="content index posts-expand">
-            
-      
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="http://www.jiangle.name/" title="http:&#x2F;&#x2F;www.jiangle.name&#x2F;" rel="noopener" target="_blank">江乐的博客</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="http://blog.makeex.com/" title="http:&#x2F;&#x2F;blog.makeex.com&#x2F;" rel="noopener" target="_blank">Sun.Makee</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="http://liuduo.me/" title="http:&#x2F;&#x2F;liuduo.me&#x2F;" rel="noopener" target="_blank">刘铎.Me</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2023/08/30/why-are-all-large-domestic-websites-abusing-target-blank/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/30/why-are-all-large-domestic-websites-abusing-target-blank/" class="post-title-link" itemprop="url">为什么国内的大型网站都在滥用 target="_blank"</a>
+          <a href="/2023/08/30/why-are-all-large-domestic-websites-abusing-target-blank/" class="post-title-link" itemprop="url">为什么国内的大型网站都在滥用 target="_blank"</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-08-30 21:24:22 / 修改时间：23:12:48" itemprop="dateCreated datePublished" datetime="2023-08-30T21:24:22+08:00">2023-08-30</time>
-            </span>
-
-          
-            <span id="/2023/08/30/why-are-all-large-domestic-websites-abusing-target-blank/" class="post-meta-item leancloud_visitors" data-flag-title="为什么国内的大型网站都在滥用 target="_blank"" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2023/08/30/why-are-all-large-domestic-websites-abusing-target-blank/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/08/30/why-are-all-large-domestic-websites-abusing-target-blank/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-08-30 21:24:22" itemprop="dateCreated datePublished" datetime="2023-08-30T21:24:22+08:00">2023-08-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-31 21:21:58" itemprop="dateModified" datetime="2023-08-31T21:21:58+08:00">2023-08-31</time>
+    </span>
+
   
-  
+    <span id="/2023/08/30/why-are-all-large-domestic-websites-abusing-target-blank/" class="post-meta-item leancloud_visitors" data-flag-title="为什么国内的大型网站都在滥用 target="_blank"" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -247,8 +263,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>也可能最近才注意到这个事情，发现国内各大主流网站全部在滥用 <code>a</code> 标签的 <code>target=&quot;_blank&quot;</code> 属性，我最近试了很多个网站，包括但不仅限于 <a target="_blank" rel="noopener" href="https://www.bilibili.com/">哔哩哔哩</a>、<a target="_blank" rel="noopener" href="https://www.163.com">网易</a>、<a target="_blank" rel="noopener" href="https://www.sina.com.cn/">新浪网</a>、<a target="_blank" rel="noopener" href="https://www.qq.com/">腾讯网</a>、<a target="_blank" rel="noopener" href="https://www.toutiao.com/">今日头条</a>等。这个是相当烦人的，我在这些网站上点击任意一个连接，全部是打开新的标签页或者窗口，浏览下来不一会就全是标签页。我在想，国内的这些人一点都不注重用户体验吗？这么害怕用户从网页跳走吗？难道不知道如果用户想在新标签页打开可以在连接上按一下鼠标滚轮吗？不知道用户想在新标签页打开可以按住 <code>Command + 点击</code> 吗？真的觉得很多国内的厂商都是臭不要脸，类似于像开屏广告以及各个视频平台的广告一样，玩出各种花来，为的是从用户身上挖出剩余价值，什么用户体验，都是次要的，反正你有离不开我。</p>
 <p>今天真是越想越气不过，花了点时间写了个油猴脚本来解决这个问题：</p>
           <!--noindex-->
@@ -265,68 +279,67 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2023/07/28/manage-commands-using-just/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/28/manage-commands-using-just/" class="post-title-link" itemprop="url">用 just 组织和管理常用命令集</a>
+          <a href="/2023/07/28/manage-commands-using-just/" class="post-title-link" itemprop="url">用 just 组织和管理常用命令集</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-07-28 22:05:41 / 修改时间：22:12:18" itemprop="dateCreated datePublished" datetime="2023-07-28T22:05:41+08:00">2023-07-28</time>
-            </span>
-
-          
-            <span id="/2023/07/28/manage-commands-using-just/" class="post-meta-item leancloud_visitors" data-flag-title="用 just 组织和管理常用命令集" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2023/07/28/manage-commands-using-just/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/07/28/manage-commands-using-just/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-07-28 22:05:41 / 修改时间：22:12:18" itemprop="dateCreated datePublished" datetime="2023-07-28T22:05:41+08:00">2023-07-28</time>
+    </span>
+
   
-  
+    <span id="/2023/07/28/manage-commands-using-just/" class="post-meta-item leancloud_visitors" data-flag-title="用 just 组织和管理常用命令集" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -335,8 +348,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>在日常使用电脑的过程中，经常会用到一些命令，并且可能要将一组命令结合才能完成自己想要的结果。如果常用的一些命令（组合）每次使用都重新敲的话，势必会影响效率。此时你可能会想到类似于 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/make/" title="make">make</a> 这样的工具，当然这也是一个选择，但是 make 的缺点也是显而易见的（有兴趣的可以通过 <a target="_blank" rel="noopener" href="https://seisman.github.io/how-to-write-makefile/introduction.html" title="makefile介绍 — 跟我一起写Makefile 1.0 文档">makefile 介绍 — 跟我一起写 Makefile 1.0 文档</a> 来入门）。几个月前我无意中发现了<a target="_blank" rel="noopener" href="https://just.systems/" title="just">just</a>，感觉在日常使用中完全可以替代 make。</p>
 <p>just 语法和 make 很类似，如果你有 make 基础的话，可以很快上手。下面简单介绍一下 just 的用法以及和 make 的一些区别（首先一个区别是 Makefile 中每个执行项叫做目标（target），而 just 中叫做配方（recipe））：</p>
 <ul>
@@ -365,91 +376,90 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" class="post-title-link" itemprop="url">关于 iOS 应用主题管理与动态切换的一些想法与实现</a>
+          <a href="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" class="post-title-link" itemprop="url">关于 iOS 应用主题管理与动态切换的一些想法与实现</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-20 01:08:41" itemprop="dateCreated datePublished" datetime="2019-07-20T01:08:41+08:00">2019-07-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-06 21:45:38" itemprop="dateModified" datetime="2019-08-06T21:45:38+08:00">2019-08-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/uikit/" itemprop="url" rel="index"><span itemprop="name">UIKit</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/uikit/swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" class="post-meta-item leancloud_visitors" data-flag-title="关于 iOS 应用主题管理与动态切换的一些想法与实现" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-07-20 01:08:41" itemprop="dateCreated datePublished" datetime="2019-07-20T01:08:41+08:00">2019-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-08-06 21:45:38" itemprop="dateModified" datetime="2019-08-06T21:45:38+08:00">2019-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ios/uikit/" itemprop="url" rel="index"><span itemprop="name">UIKit</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ios/uikit/swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2019/07/20/how-to-manage-ios-themes-and-switch-themes-dynamically/" class="post-meta-item leancloud_visitors" data-flag-title="关于 iOS 应用主题管理与动态切换的一些想法与实现" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -458,8 +468,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>今天突然想写篇博客，看了上一篇的发表时间，已经快接近三年半了，着实惭愧啊~。这篇文章主要介绍一下前段时间突发奇想写的一个管理 iOS 主题的开源小库：<a target="_blank" rel="noopener" href="https://github.com/azone/ThemeManager">ThemeManager</a>。</p>
 <h3 id="为何要实现一个管理主题的库"><a class="markdownIt-Anchor" href="#为何要实现一个管理主题的库"></a> 为何要实现一个管理主题的库</h3>
 <p>其实做一个方便管理和切换 iOS 主题的库的想法是好几年前的事了，在这期间脑补过很多实现方案，当想开始做的时候又由于想到了方案的不足再加上我对切换主题没有什么需求，导致一直搁浅。前段时间突发奇想，来了灵感，先在脑袋里打了个草稿，几周后着手开始做，加上一两天空闲时间做的实验，最终花了我一晚上的时间（下班后，包括代码 + Demo + README + 适配各种依赖管理工具(Swift Package, Carthage, CocoaPods，包括本地测试) + 传到 <a target="_blank" rel="noopener" href="https://cocoapods.org/pods/WYZThemeManager">CocoaPods</a> 上，最终两点多完成）终于把这个库做出来了。所以做这玩意纯粹是个人兴趣加上突发奇想。</p>
@@ -477,83 +485,82 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2016/03/11/take-screenshot-of-eaglview-may-easily-cause-memory-leaks-in-swift/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/11/take-screenshot-of-eaglview-may-easily-cause-memory-leaks-in-swift/" class="post-title-link" itemprop="url">Swift 下 OpenGL 截图容易导致的内存泄露</a>
+          <a href="/2016/03/11/take-screenshot-of-eaglview-may-easily-cause-memory-leaks-in-swift/" class="post-title-link" itemprop="url">Swift 下 OpenGL 截图容易导致的内存泄露</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-03-11 10:38:57" itemprop="dateCreated datePublished" datetime="2016-03-11T10:38:57+08:00">2016-03-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-27 22:23:09" itemprop="dateModified" datetime="2019-03-27T22:23:09+08:00">2019-03-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/03/11/take-screenshot-of-eaglview-may-easily-cause-memory-leaks-in-swift/" class="post-meta-item leancloud_visitors" data-flag-title="Swift 下 OpenGL 截图容易导致的内存泄露" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2016/03/11/take-screenshot-of-eaglview-may-easily-cause-memory-leaks-in-swift/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/11/take-screenshot-of-eaglview-may-easily-cause-memory-leaks-in-swift/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-03-11 10:38:57" itemprop="dateCreated datePublished" datetime="2016-03-11T10:38:57+08:00">2016-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-03-27 22:23:09" itemprop="dateModified" datetime="2019-03-27T22:23:09+08:00">2019-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2016/03/11/take-screenshot-of-eaglview-may-easily-cause-memory-leaks-in-swift/" class="post-meta-item leancloud_visitors" data-flag-title="Swift 下 OpenGL 截图容易导致的内存泄露" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -562,8 +569,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>由于业务需求，需要对两个（现在是三个了）中的一个 OpenGL 渲染的视图进行截图并增加模糊效果。开始用传统的方法进行截图，但是失败了（截取的是黑屏还是空白，忘记了。。。），后来意识到这个和一般的视图应该是不一样的，就到  Google 上搜了一下。由于没怎么玩过，又不怎么懂，就直接翻译成 <code>Swift</code> 了。开始是没发现什么问题的，都是但是到后来发现截图总是其中一个的（看那个先出来，基本上不是想要的那个），而不是想要的那个。</p>
 <p>仔细研究后发现，OpenGL 的截图是根据 RenderBuffer 来截取的，由于没有指定 RenderBuffer 所以截取的图只是其中某一个。知道了这个也没用，由于这个 View 用的是第三方库，所以不知道这个 View 的 RenderBuffer。。。后果经过 Debug，发现这个 View 有个 <code>_colorRenderBuffer</code> 属性，这就好办啦~。经过改造后代码如下：</p>
           <!--noindex-->
@@ -580,83 +585,82 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2016/03/03/remaining-issues-after-migrated-from-octopress-to-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/03/remaining-issues-after-migrated-from-octopress-to-hexo/" class="post-title-link" itemprop="url">从 Octopress 迁移到 Hexo 后的一些遗留问题</a>
+          <a href="/2016/03/03/remaining-issues-after-migrated-from-octopress-to-hexo/" class="post-title-link" itemprop="url">从 Octopress 迁移到 Hexo 后的一些遗留问题</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-03-03 18:00:12" itemprop="dateCreated datePublished" datetime="2016-03-03T18:00:12+08:00">2016-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-27 22:23:09" itemprop="dateModified" datetime="2019-03-27T22:23:09+08:00">2019-03-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">Other</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/03/03/remaining-issues-after-migrated-from-octopress-to-hexo/" class="post-meta-item leancloud_visitors" data-flag-title="从 Octopress 迁移到 Hexo 后的一些遗留问题" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2016/03/03/remaining-issues-after-migrated-from-octopress-to-hexo/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/03/remaining-issues-after-migrated-from-octopress-to-hexo/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-03-03 18:00:12" itemprop="dateCreated datePublished" datetime="2016-03-03T18:00:12+08:00">2016-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-03-27 22:23:09" itemprop="dateModified" datetime="2019-03-27T22:23:09+08:00">2019-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">Other</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2016/03/03/remaining-issues-after-migrated-from-octopress-to-hexo/" class="post-meta-item leancloud_visitors" data-flag-title="从 Octopress 迁移到 Hexo 后的一些遗留问题" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -665,8 +669,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>上周我讲自己的博客从 Octopress 迁移到了 Hexo，感觉还是很不错的，但是由于Octopress 和 Hexo 存在一些差别，所以导致了如下三个问题：</p>
 <ol>
 <li>以前 Octopress 的网址是包含 /blog/ 的，迁移之后没了，这样会导致由搜索引擎（搜索引擎更新还是很不及时的）的链接和外网引用的链接点过来会跳到404页面</li>
@@ -688,83 +690,82 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2016/02/26/migrate-from-octopress-to-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/02/26/migrate-from-octopress-to-hexo/" class="post-title-link" itemprop="url">从 Octopress 迁移到 Hexo</a>
+          <a href="/2016/02/26/migrate-from-octopress-to-hexo/" class="post-title-link" itemprop="url">从 Octopress 迁移到 Hexo</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-02-26 14:16:24" itemprop="dateCreated datePublished" datetime="2016-02-26T14:16:24+08:00">2016-02-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-04-03 01:44:25" itemprop="dateModified" datetime="2019-04-03T01:44:25+08:00">2019-04-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">Other</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/02/26/migrate-from-octopress-to-hexo/" class="post-meta-item leancloud_visitors" data-flag-title="从 Octopress 迁移到 Hexo" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2016/02/26/migrate-from-octopress-to-hexo/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/02/26/migrate-from-octopress-to-hexo/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-02-26 14:16:24" itemprop="dateCreated datePublished" datetime="2016-02-26T14:16:24+08:00">2016-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-04-03 01:44:25" itemprop="dateModified" datetime="2019-04-03T01:44:25+08:00">2019-04-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">Other</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2016/02/26/migrate-from-octopress-to-hexo/" class="post-meta-item leancloud_visitors" data-flag-title="从 Octopress 迁移到 Hexo" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -773,8 +774,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>很久没写过日志了，原因没有别的，实在是鄙人太！懒！了！自己也想不能继续懒下去，所以决定改变从这里开始，先换个静态博客生成系统吧。好吧~，换系统其实和这个没多大关系，主要是因为 Octopress 已经 N 久没有更新了，还有就是对于一个 N 久没有写过博客的人来说，再用 <a target="_blank" rel="noopener" href="http://octopress.org">Octopress</a> 需要重新熟悉一下，相比之下 <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 就简单多了，还有就是据说生成速度上 <a target="_blank" rel="noopener" href="http://octopress.org">Octopress</a> 要比 <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 慢一大截。下面介绍一下 Mac 下 Hexo 的安装过程吧~</p>
           <!--noindex-->
             <div class="post-button">
@@ -790,87 +789,86 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2014/04/04/how-to-make-core-data-migration-smarter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/04/04/how-to-make-core-data-migration-smarter/" class="post-title-link" itemprop="url">如何运用更聪明的办法进行Core Data数据迁移</a>
+          <a href="/2014/04/04/how-to-make-core-data-migration-smarter/" class="post-title-link" itemprop="url">如何运用更聪明的办法进行Core Data数据迁移</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-04-04 22:49:25" itemprop="dateCreated datePublished" datetime="2014-04-04T22:49:25+08:00">2014-04-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-27 22:23:09" itemprop="dateModified" datetime="2019-03-27T22:23:09+08:00">2019-03-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/core-data/" itemprop="url" rel="index"><span itemprop="name">Core Data</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2014/04/04/how-to-make-core-data-migration-smarter/" class="post-meta-item leancloud_visitors" data-flag-title="如何运用更聪明的办法进行Core Data数据迁移" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2014/04/04/how-to-make-core-data-migration-smarter/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/04/04/how-to-make-core-data-migration-smarter/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-04-04 22:49:25" itemprop="dateCreated datePublished" datetime="2014-04-04T22:49:25+08:00">2014-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-03-27 22:23:09" itemprop="dateModified" datetime="2019-03-27T22:23:09+08:00">2019-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ios/core-data/" itemprop="url" rel="index"><span itemprop="name">Core Data</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2014/04/04/how-to-make-core-data-migration-smarter/" class="post-meta-item leancloud_visitors" data-flag-title="如何运用更聪明的办法进行Core Data数据迁移" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -879,8 +877,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>这一段时间一个Core Data数据迁移的问题快把我搞死了，上面给的压力也非常大。先说一下来龙去脉吧~</p>
 <h2 id="第一次犯错"><a class="markdownIt-Anchor" href="#第一次犯错"></a> 第一次犯错</h2>
 <p>首先以我为主程的一个应用（绝大部分代码是我写的）由于之前数据库设计的不合理导致应用总是无规律可循的崩溃。这个问题一直存在了好几个月，怎么研究都是无果。后来直到看到Stack Overflow上<a target="_blank" rel="noopener" href="http://stackoverflow.com/a/20446844/397718">Core Data: EXC_BAD_ACCESS accessing relationship</a>的帖子（后来还看到这个<a target="_blank" rel="noopener" href="http://stackoverflow.com/a/6327448/">Semantic Issue: Property’s synthesized getter follows Cocoa naming convention for returning ‘owned’ objects</a>）才意识到自己的愚蠢和无知！我忘记了Objective-C的属性名（Core Data中包括属性名和关系名）不能以new打头，否则就违反了Objective-C的<a target="_blank" rel="noopener" href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmRules.html">内存管理策略</a>。</p>
@@ -899,83 +895,82 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2014/01/17/iosxia-ru-he-bo-fang-gifdong-hua/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/01/17/iosxia-ru-he-bo-fang-gifdong-hua/" class="post-title-link" itemprop="url">iOS下如何播放GIF动画</a>
+          <a href="/2014/01/17/iosxia-ru-he-bo-fang-gifdong-hua/" class="post-title-link" itemprop="url">iOS下如何播放GIF动画</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-01-17 22:19:39" itemprop="dateCreated datePublished" datetime="2014-01-17T22:19:39+08:00">2014-01-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-27 22:23:09" itemprop="dateModified" datetime="2019-03-27T22:23:09+08:00">2019-03-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2014/01/17/iosxia-ru-he-bo-fang-gifdong-hua/" class="post-meta-item leancloud_visitors" data-flag-title="iOS下如何播放GIF动画" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2014/01/17/iosxia-ru-he-bo-fang-gifdong-hua/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/01/17/iosxia-ru-he-bo-fang-gifdong-hua/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2014-01-17 22:19:39" itemprop="dateCreated datePublished" datetime="2014-01-17T22:19:39+08:00">2014-01-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-03-27 22:23:09" itemprop="dateModified" datetime="2019-03-27T22:23:09+08:00">2019-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2014/01/17/iosxia-ru-he-bo-fang-gifdong-hua/" class="post-meta-item leancloud_visitors" data-flag-title="iOS下如何播放GIF动画" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -984,8 +979,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>几个月前无意中看到<a target="_blank" rel="noopener" href="http://stackoverflow.com">StackOverFlow</a>上的一个帖子<a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/14458299/how-to-get-suitable-cgimage-from-combined-tiff-for-display-scale">How to get suitable CGImage from combined TIFF for display scale</a>了解到了<a target="_blank" rel="noopener" href="https://developer.apple.com/library/ios/documentation/graphicsimaging/Reference/ImageIORefCollection/_index.html">ImageIO</a>这个框架，看到它可以读取<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Tagged_Image_File_Format">TIFF</a>中的单张图片，当时就想能不能读取<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/GIF">GIF</a>中的图片呢？后来进一步研究后发现答案是肯定的。后来就想哪天细研究一下吧，顺便写篇博客记录一下。没想到我是这么的懒~，昨天才终于研究好了顺便写了个项目<a target="_blank" rel="noopener" href="https://github.com/azone/WYZGIFAnimationView">WYZGIFAnimationView</a>开源到了<a target="_blank" rel="noopener" href="https://github.com">Github</a>上。</p>
           <!--noindex-->
             <div class="post-button">
@@ -1001,83 +994,82 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/" class="post-title-link" itemprop="url">如何让你的iOS7应用支持键盘快捷键</a>
+          <a href="/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/" class="post-title-link" itemprop="url">如何让你的iOS7应用支持键盘快捷键</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-12-26 22:50:35" itemprop="dateCreated datePublished" datetime="2013-12-26T22:50:35+08:00">2013-12-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-27 23:44:31" itemprop="dateModified" datetime="2019-03-27T23:44:31+08:00">2019-03-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/" class="post-meta-item leancloud_visitors" data-flag-title="如何让你的iOS7应用支持键盘快捷键" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2013-12-26 22:50:35" itemprop="dateCreated datePublished" datetime="2013-12-26T22:50:35+08:00">2013-12-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-03-27 23:44:31" itemprop="dateModified" datetime="2019-03-27T23:44:31+08:00">2019-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/" class="post-meta-item leancloud_visitors" data-flag-title="如何让你的iOS7应用支持键盘快捷键" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -1086,8 +1078,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>最近买了个罗技的光能无线键盘（<a target="_blank" rel="noopener" href="http://www.amazon.cn/Logitech-%E7%BD%97%E6%8A%80-K760-%E5%A4%AA%E9%98%B3%E8%83%BD%E9%94%AE%E7%9B%98/dp/B008KW90OM/ref=sr_1_cc_1?s=aps&amp;ie=UTF8&amp;qid=1388078016&amp;sr=1-1-catcorr&amp;keywords=k760">K760</a>）用来连接我的iOS设备，但是发现iOS所支持的快捷键太少了（特别是iPhone），而iPad也仅有那几款应用支持那可怜的几个快捷键。这使得我感觉iOS设备用键盘如同鸡肋。。。因为打字什么的还是要手点。</p>
 <p>记得之前了解到iOS 7的UIResponder新增了keyCommands方法，于是今天就研究了一下API文档并且测试了一下，感觉真是太棒了~</p>
 <p>下面介绍一下如何让应用支持外接键盘的快捷键，其实很简单！</p>
@@ -1105,83 +1095,82 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://firestudio.cn/2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Yozone W.">
-      <meta itemprop="description" content="iOS Developer">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Fire Studio">
+      <meta itemprop="description" content="iOS Developer">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Fire Studio">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/" class="post-title-link" itemprop="url">如何在博客中插入Liquid模板变量</a>
+          <a href="/2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/" class="post-title-link" itemprop="url">如何在博客中插入Liquid模板变量</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-01-23 22:07:00" itemprop="dateCreated datePublished" datetime="2013-01-23T22:07:00+08:00">2013-01-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-28 02:28:59" itemprop="dateModified" datetime="2019-03-28T02:28:59+08:00">2019-03-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">Other</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/" class="post-meta-item leancloud_visitors" data-flag-title="如何在博客中插入Liquid模板变量" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
+        <i class="far fa-calendar"></i>
       </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/" itemprop="commentCount"></span>
-    </a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2013-01-23 22:07:00" itemprop="dateCreated datePublished" datetime="2013-01-23T22:07:00+08:00">2013-01-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-03-28 02:28:59" itemprop="dateModified" datetime="2019-03-28T02:28:59+08:00">2019-03-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">Other</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/" class="post-meta-item leancloud_visitors" data-flag-title="如何在博客中插入Liquid模板变量" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -1190,8 +1179,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>上周写了一篇博客《<a href="/2013/01/13/rang-octopresszai-xin-biao-qian-ye-zhong-da-kai-wai-lian/">让Octopress在新标签页中打开外链</a>》，里面嵌入了一段代码，但是里面有一个模板变量<code>{{ root_url }}</code>却怎么也显示不出来~，后来在Octpress的Issues页面问了一下才知道如何才能不把那些用来显示的代码块中的变量不被解析，具体看<a target="_blank" rel="noopener" href="https://github.com/imathis/octopress/issues/941#issuecomment-12206038">https://github.com/imathis/octopress/issues/941#issuecomment-12206038</a>或者Stack Overflow的<a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags">How to escape liquid template tags?</a></p>
 
       
@@ -1200,315 +1187,81 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Yozone W."
-      src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">Yozone W.</p>
-  <div class="site-description" itemprop="description">iOS Developer</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">14</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">12</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/azone" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;azone" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:wangyaozh@gmail.com" title="E-Mail → mailto:wangyaozh@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://weibo.com/azone163" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;azone163" rel="noopener" target="_blank"><i class="weibo fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/azone163" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;azone163" rel="noopener" target="_blank"><i class="twitter fa-fw"></i></a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://www.jiangle.name/" title="http:&#x2F;&#x2F;www.jiangle.name&#x2F;" rel="noopener" target="_blank">江乐的博客</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="http://blog.makeex.com/" title="http:&#x2F;&#x2F;blog.makeex.com&#x2F;" rel="noopener" target="_blank">Sun.Makee</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="http://liuduo.me/" title="http:&#x2F;&#x2F;liuduo.me&#x2F;" rel="noopener" target="_blank">刘铎.Me</a>
-        </li>
-    </ul>
-  </div>
-
-<div class="motion-element">
-  <img src="/images/mp_qr_code.jpg" />
-</div>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 2013 – 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Yozone W.</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-        
-
-
-
-
-
-
-<script>
-  (function() {
-    function leancloudSelector(url) {
-      url = encodeURI(url);
-      return document.getElementById(url).querySelector('.leancloud-visitors-count');
-    }
-
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = decodeURI(visitors.id);
-      var title = visitors.dataset.flagTitle;
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            var counter = results[0];
-            leancloudSelector(url).innerText = counter.time + 1;
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .catch(error => {
-                console.error('Failed to save visitor count', error);
-              });
-          } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-
-    function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return decodeURI(element.id);
-      });
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
-        .then(response => response.json())
-        .then(({ results }) => {
-          for (let url of entries) {
-            let target = results.find(item => item.url === url);
-            leancloudSelector(url).innerText = target ? target.time : 0;
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-
-    let { app_id, app_key, server_url } = {"enable":true,"app_id":"u3bUmmwlc4DcxRvs4eXWbyrD-gzGzoHsz","app_key":"6CCDedtK3iim5lQE1cCfy73V","server_url":null,"security":true};
-    function fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${api_server}/1.1${url}`, {
-          method,
-          headers: {
-            'X-LC-Id'     : app_id,
-            'X-LC-Key'    : app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      if (CONFIG.page.isPost) {
-        if (CONFIG.hostname !== location.hostname) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
-      }
-    }
-
-    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
-
-    if (api_server) {
-      fetchData(api_server);
-    } else {
-      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
-        .then(response => response.json())
-        .then(({ api_server }) => {
-          fetchData('https://' + api_server);
-        });
-    }
-  })();
-</script>
-
-
-      </div>
+      
     </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2013 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yozone W.</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
+    </div>
+  </footer>
+
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
 
-<script src="/js/utils.js"></script>
+  <a href="https://github.com/azone" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.umd.js" integrity="sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
 
 
-
-
-
-
-
-
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"u3bUmmwlc4DcxRvs4eXWbyrD-gzGzoHsz","app_key":"6CCDedtK3iim5lQE1cCfy73V","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
 
 
   
 
-  
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://firestudio.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 
 </body>
 </html>
