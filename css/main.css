@@ -337,6 +337,9 @@ th {
 td {
   border-bottom-width: 1px;
 }
+div.gist-data tbody tr:nth-of-type(odd) {
+  background: none;
+}
 .btn {
   background: var(--btn-default-bg);
   border: 2px solid var(--btn-default-border-color);
