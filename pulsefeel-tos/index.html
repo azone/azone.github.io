@@ -21,27 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"firestudio.dev","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":false,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="最近买了个罗技的光能无线键盘（K760）用来连接我的iOS设备，但是发现iOS所支持的快捷键太少了（特别是iPhone），而iPad也仅有那几款应用支持那可怜的几个快捷键。这使得我感觉iOS设备用键盘如同鸡肋。。。因为打字什么的还是要手点。 记得之前了解到iOS 7的UIResponder新增了keyCommands方法，于是今天就研究了一下API文档并且测试了一下，感觉真是太棒了~ 下面介绍一下">
-<meta property="og:type" content="article">
-<meta property="og:title" content="如何让你的iOS7应用支持键盘快捷键">
-<meta property="og:url" content="https://firestudio.dev/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/index.html">
+    <meta name="description" content="Terms of Use Pulse Feel Last updated: March 26, 2026  Acceptance of Terms By downloading, installing, or using Pulse Feel (“the App”), you agree to be bound by these Terms of Use. If you do not agree">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PulseFeel ToS">
+<meta property="og:url" content="https://firestudio.dev/pulsefeel-tos/index.html">
 <meta property="og:site_name" content="Fire Studio">
-<meta property="og:description" content="最近买了个罗技的光能无线键盘（K760）用来连接我的iOS设备，但是发现iOS所支持的快捷键太少了（特别是iPhone），而iPad也仅有那几款应用支持那可怜的几个快捷键。这使得我感觉iOS设备用键盘如同鸡肋。。。因为打字什么的还是要手点。 记得之前了解到iOS 7的UIResponder新增了keyCommands方法，于是今天就研究了一下API文档并且测试了一下，感觉真是太棒了~ 下面介绍一下">
+<meta property="og:description" content="Terms of Use Pulse Feel Last updated: March 26, 2026  Acceptance of Terms By downloading, installing, or using Pulse Feel (“the App”), you agree to be bound by these Terms of Use. If you do not agree">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2013-12-26T14:50:35.000Z">
-<meta property="article:modified_time" content="2025-04-23T17:36:47.682Z">
+<meta property="article:published_time" content="2026-03-26T15:05:05.000Z">
+<meta property="article:modified_time" content="2026-03-26T15:05:35.990Z">
 <meta property="article:author" content="Yozone W.">
 <meta property="article:tag" content="iOS, OS X, Objective-C, Swift, Xcode and so on.">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://firestudio.dev/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/">
+<link rel="canonical" href="https://firestudio.dev/pulsefeel-tos/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://firestudio.dev/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/","path":"2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/","title":"如何让你的iOS7应用支持键盘快捷键"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"https://firestudio.dev/pulsefeel-tos/index.html","path":"pulsefeel-tos/index.html","title":"PulseFeel ToS"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>如何让你的iOS7应用支持键盘快捷键 | Fire Studio</title>
+<title>PulseFeel ToS | Fire Studio
+</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1990573-3"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-1990573-3","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -133,7 +134,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -146,6 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#terms-of-use"><span class="nav-number">1.</span> <span class="nav-text"> Terms of Use</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#acceptance-of-terms"><span class="nav-number">1.1.</span> <span class="nav-text"> Acceptance of Terms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#description-of-service"><span class="nav-number">1.2.</span> <span class="nav-text"> Description of Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subscriptions"><span class="nav-number">1.3.</span> <span class="nav-text"> Subscriptions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#free-tier"><span class="nav-number">1.4.</span> <span class="nav-text"> Free Tier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intellectual-property"><span class="nav-number">1.5.</span> <span class="nav-text"> Intellectual Property</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#acceptable-use"><span class="nav-number">1.6.</span> <span class="nav-text"> Acceptable Use</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#disclaimer-of-warranties"><span class="nav-number">1.7.</span> <span class="nav-text"> Disclaimer of Warranties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#limitation-of-liability"><span class="nav-number">1.8.</span> <span class="nav-text"> Limitation of Liability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#health-notice"><span class="nav-number">1.9.</span> <span class="nav-text"> Health Notice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#changes-to-these-terms"><span class="nav-number">1.10.</span> <span class="nav-text"> Changes to These Terms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#governing-law"><span class="nav-number">1.11.</span> <span class="nav-text"> Governing Law</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contact-us"><span class="nav-number">1.12.</span> <span class="nav-text"> Contact Us</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,132 +225,77 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner page posts-expand">
 
 
-  
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
 
+<h1 class="post-title" itemprop="name headline">PulseFeel ToS
+</h1>
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://firestudio.dev/2013/12/26/ru-he-rang-ni-de-ios7ying-yong-zhi-chi-jian-pan-kuai-jie-jian/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Yozone W.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Fire Studio">
-      <meta itemprop="description" content="iOS Developer">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="如何让你的iOS7应用支持键盘快捷键 | Fire Studio">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          如何让你的iOS7应用支持键盘快捷键
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2013-12-26 22:50:35" itemprop="dateCreated datePublished" datetime="2013-12-26T22:50:35+08:00">2013-12-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-04-24 01:36:47" itemprop="dateModified" datetime="2025-04-24T01:36:47+08:00">2025-04-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
-        </span>
-    </span>
-
-  
+<div class="post-meta-container">
 </div>
 
-        </div>
-      </header>
+</header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><p>最近买了个罗技的光能无线键盘（<a target="_blank" rel="noopener" href="http://www.amazon.cn/Logitech-%E7%BD%97%E6%8A%80-K760-%E5%A4%AA%E9%98%B3%E8%83%BD%E9%94%AE%E7%9B%98/dp/B008KW90OM/ref=sr_1_cc_1?s=aps&amp;ie=UTF8&amp;qid=1388078016&amp;sr=1-1-catcorr&amp;keywords=k760">K760</a>）用来连接我的iOS设备，但是发现iOS所支持的快捷键太少了（特别是iPhone），而iPad也仅有那几款应用支持那可怜的几个快捷键。这使得我感觉iOS设备用键盘如同鸡肋。。。因为打字什么的还是要手点。</p>
-<p>记得之前了解到iOS 7的UIResponder新增了keyCommands方法，于是今天就研究了一下API文档并且测试了一下，感觉真是太棒了~</p>
-<p>下面介绍一下如何让应用支持外接键盘的快捷键，其实很简单！</p>
-<span id="more"></span>
-<p>首先要确保在需要实现键盘快捷键的ViewController中加入如下代码：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">BOOL</span>)canBecomeFirstResponder &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后就是重写<code>UIViewController</code>的<code>- (NSArray *)keyCommands</code>方法：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">NSArray</span> *)keyCommands &#123;</span><br><span class="line">    <span class="keyword">return</span> @[[<span class="built_in">UIKeyCommand</span> keyCommandWithInput:<span class="built_in">UIKeyInputEscape</span> modifierFlags:kNilOptions action:<span class="keyword">@selector</span>(escapeKeyPressed:)]];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最后一步就是实现<code>UIKeyCommand</code>的<code>action</code>：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">void</span>)escapeKeyPressed:(<span class="built_in">UIKeyCommand</span> *)keyCommand &#123;</span><br><span class="line">    <span class="built_in">UIAlertView</span> *alertView = [[<span class="built_in">UIAlertView</span> alloc] initWithTitle:<span class="string">@&quot;UIKeyCommand Demo&quot;</span> message:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@&quot;%@ pressed&quot;</span>, keyCommand.input] delegate:<span class="literal">nil</span> cancelButtonTitle:<span class="string">@&quot;Ok&quot;</span> otherButtonTitles:<span class="literal">nil</span>];</span><br><span class="line">    [alertView show];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在试一下运行app，然后按一下<code>esc</code>键（模拟器下可以使用电脑的键盘），看一下效果~，怎么样？很棒吧！！！</p>
-<p><strong>参考文档：</strong></p>
+      
+      
+      
+      <div class="post-body">
+          <h1 id="terms-of-use"><a class="markdownIt-Anchor" href="#terms-of-use"></a> Terms of Use</h1>
+<p><strong>Pulse Feel</strong><br />
+Last updated: March 26, 2026</p>
+<h2 id="acceptance-of-terms"><a class="markdownIt-Anchor" href="#acceptance-of-terms"></a> Acceptance of Terms</h2>
+<p>By downloading, installing, or using Pulse Feel (“the App”), you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use the App.</p>
+<h2 id="description-of-service"><a class="markdownIt-Anchor" href="#description-of-service"></a> Description of Service</h2>
+<p>Pulse Feel is a haptic pattern design tool that allows you to create, preview, and share custom vibration patterns on your iPhone. The App is provided “as is” for personal and development use.</p>
+<h2 id="subscriptions"><a class="markdownIt-Anchor" href="#subscriptions"></a> Subscriptions</h2>
+<p>The App offers auto-renewable subscription plans (“Pulse Feel Pro”) that unlock additional features. By subscribing, you agree to the following:</p>
 <ul>
-<li>
-<p><a target="_blank" rel="noopener" href="https://developer.apple.com/Library/ios/documentation/UIKit/Reference/UIResponder_Class/Reference/Reference.html#jumpTo_5">UIResponder的keyCommands</a> (<a href="dash://UIResponder%20keyCommands">在 Dash 中打开</a>)</p>
-</li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://developer.apple.com/Library/ios/documentation/UIKit/Reference/UIKeyCommand_class/Reference/Reference.html#//apple_ref/occ/cl/UIKeyCommand">UIKeyCommand</a> (<a href="dash://UIKeyCommand">在 Dash 中打开</a>)</p>
-</li>
+<li><strong>Payment</strong>: Payment is charged to your Apple ID account at confirmation of purchase.</li>
+<li><strong>Renewal</strong>: Subscriptions automatically renew unless canceled at least 24 hours before the end of the current billing period.</li>
+<li><strong>Management</strong>: You can manage or cancel your subscription at any time through your device’s Settings &gt; Apple ID &gt; Subscriptions.</li>
+<li><strong>Pricing</strong>: Subscription prices are displayed in the App and may vary by region. Price changes will be communicated in advance as required by Apple.</li>
+<li><strong>Refunds</strong>: Refund requests are handled by Apple in accordance with their <a target="_blank" rel="noopener" href="https://support.apple.com/en-us/HT204084">refund policy</a>.</li>
 </ul>
+<h2 id="free-tier"><a class="markdownIt-Anchor" href="#free-tier"></a> Free Tier</h2>
+<p>The App provides limited functionality at no cost, including the ability to create up to 3 patterns with up to 3 segments each. Free tier features may change over time.</p>
+<h2 id="intellectual-property"><a class="markdownIt-Anchor" href="#intellectual-property"></a> Intellectual Property</h2>
+<p>All content, design, and code within the App are the property of Fire Studio. Haptic patterns you create are yours — you retain full ownership of any patterns you design using the App.</p>
+<h2 id="acceptable-use"><a class="markdownIt-Anchor" href="#acceptable-use"></a> Acceptable Use</h2>
+<p>You agree not to:</p>
+<ul>
+<li>Reverse engineer, decompile, or disassemble the App</li>
+<li>Use the App for any unlawful purpose</li>
+<li>Redistribute or resell the App or its content</li>
+</ul>
+<h2 id="disclaimer-of-warranties"><a class="markdownIt-Anchor" href="#disclaimer-of-warranties"></a> Disclaimer of Warranties</h2>
+<p>The App is provided on an “as is” and “as available” basis without warranties of any kind, either express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of harmful components.</p>
+<h2 id="limitation-of-liability"><a class="markdownIt-Anchor" href="#limitation-of-liability"></a> Limitation of Liability</h2>
+<p>To the maximum extent permitted by applicable law, Fire Studio shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of the App.</p>
+<h2 id="health-notice"><a class="markdownIt-Anchor" href="#health-notice"></a> Health Notice</h2>
+<p>The App uses your device’s Taptic Engine to produce vibrations. If you experience any discomfort while using the App, discontinue use immediately. The App is not a medical device and should not be used as a substitute for professional medical advice or treatment.</p>
+<h2 id="changes-to-these-terms"><a class="markdownIt-Anchor" href="#changes-to-these-terms"></a> Changes to These Terms</h2>
+<p>We reserve the right to modify these Terms of Use at any time. Changes will be reflected by updating the “Last updated” date above. Continued use of the App after changes constitutes acceptance of the revised terms.</p>
+<h2 id="governing-law"><a class="markdownIt-Anchor" href="#governing-law"></a> Governing Law</h2>
+<p>These terms shall be governed by and construed in accordance with the laws of the People’s Republic of China, without regard to conflict of law principles.</p>
+<h2 id="contact-us"><a class="markdownIt-Anchor" href="#contact-us"></a> Contact Us</h2>
+<p>If you have any questions about these Terms of Use, please contact us at:</p>
+<p><strong>Email:</strong> <a href="mailto:wangyaozh+pulsefeel@gmail.com">wangyaozh+pulsefeel@gmail.com</a></p>
 
+      </div>
+      
+      
+      
     </div>
 
     
     
-    
-
-    <footer class="post-footer">
-
-        
-  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
-    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
-      <a class="a2a_button_facebook"></a>
-      <a class="a2a_button_twitter"></a>
-  </div>
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2013/01/23/ru-he-zai-bo-ke-zhong-cha-ru-liquidmo-ban-bian-liang/" rel="prev" title="如何在博客中插入Liquid模板变量">
-                  <i class="fa fa-angle-left"></i> 如何在博客中插入Liquid模板变量
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2014/01/17/iosxia-ru-he-bo-fang-gifdong-hua/" rel="next" title="iOS下如何播放GIF动画">
-                  iOS下如何播放GIF动画 <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
 
 
-
-
-
-
-    <div class="comments utterances-container"></div>
 </div>
   </main>
 
